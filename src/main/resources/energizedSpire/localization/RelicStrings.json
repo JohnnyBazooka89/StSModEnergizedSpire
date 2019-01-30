@@ -1,0 +1,72 @@
+{
+  "energizedSpire:DeflatedTyre": {
+    "NAME": "Deflated Tyre",
+    "FLAVOR": "You won't get too far with a deflated tyre.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, lose #b",
+      " #yStrength."
+    ]
+  },
+  "energizedSpire:HighHeels": {
+    "NAME": "High Heels",
+    "FLAVOR": "Elegant, but not very comfortable for the combat.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, lose #b",
+      " #yDexterity."
+    ]
+  },
+  "energizedSpire:OldTV": {
+    "NAME": "Old TV",
+    "FLAVOR": "Too old to use, too good to throw away.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, lose #b",
+      " #yFocus."
+    ]
+  },
+  "energizedSpire:DeadBattery": {
+    "NAME": "Dead Battery",
+    "FLAVOR": "Press F to pay respects.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. You cannot play more than #b",
+      " Power card per turn.",
+      "I cannot play more than #r",
+      " Power card per turn."
+    ]
+  },
+  "energizedSpire:SpiderWeb": {
+    "NAME": "Spider Web",
+    "FLAVOR": "Use it to catch your enemies, not to catch yourself...",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Start each combat #yEntangled for #b",
+      " turn."
+    ]
+  },
+  "energizedSpire:CursedPentagram": {
+    "NAME": "Cursed Pentagram",
+    "FLAVOR": "Don't mess with the force you don't understand...",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Obtain a #rCurse for every #b",
+      " cards added to your deck while you have this relic."
+    ]
+  },
+  "energizedSpire:RedRose": {
+    "NAME": "Red Rose",
+    "FLAVOR": "There is no rose without a thorn.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. ALL enemies start combat with #b",
+      " stack of #yThorns."
+    ]
+  },
+  "energizedSpire:HugeHouse": {
+    "NAME": "Huge House",
+    "FLAVOR": "Is it adequate enough?",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Lose #b",
+      " random potion. Lose #b",
+      " Gold. Lower your Max HP by #b",
+      ". Obtain #b",
+      " #rCurse. Transform #b",
+      " random card."
+    ]
+  }
+}
