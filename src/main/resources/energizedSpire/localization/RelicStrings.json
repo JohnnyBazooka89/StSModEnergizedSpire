@@ -68,5 +68,19 @@
       " #rCurse. Transform #b",
       " random card."
     ]
+  },
+  "energizedSpire:OgreHead": {
+    "NAME": "Ogre Head",
+    "FLAVOR": "Me smash you! Wait... who?",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Whenever you play a card, you have 50% chance to target another enemy."
+    ]
+  },
+  "energizedSpire:EnergizedDie": {
+    "NAME": "Energized Die",
+    "FLAVOR": "Alea iacta est.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Whenever you climb a floor, Energized Die is rerolled to have the negative effect of 1 of 6 other energy relics: 1 - Cursed Key, 2 - Sozu, 3 - Ectoplasm, 4 - Runic Dome, 5 - Philosopher's Stone, 6 - Velvet Choker."
+    ]
   }
 }

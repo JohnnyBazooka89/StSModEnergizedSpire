@@ -69,6 +69,8 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.addRelic(new RedRose(), RelicType.SHARED);
         BaseMod.addRelic(new SpiderWeb(), RelicType.SHARED);
         BaseMod.addRelic(new HugeHouse(), RelicType.SHARED);
+        BaseMod.addRelic(new OgreHead(), RelicType.SHARED);
+        BaseMod.addRelic(new EnergizedDie(), RelicType.SHARED);
 
         logger.info("Done editing relics");
     }
