@@ -63,12 +63,11 @@ public class EnergizedDie extends CustomRelic {
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {
+        this.pulse = false;
         if (isCurrentEffectEqualTo(EnergizedDieEffect.CURSED_KEY)) {
             if ((room instanceof TreasureRoom)) {
                 flash();
                 this.pulse = true;
-            } else {
-                this.pulse = false;
             }
         }
     }
