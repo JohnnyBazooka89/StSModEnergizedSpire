@@ -83,5 +83,20 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Whenever you climb a floor, Energized Die is rerolled to have the negative effect of 1 of 6 other energy relics: 1 - Cursed Key, 2 - Sozu, 3 - Ectoplasm, 4 - Runic Dome, 5 - Philosopher's Stone, 6 - Velvet Choker."
     ]
+  },
+  "energizedSpire:MagnifyingGlass": {
+    "NAME": "Magnifying Glass",
+    "FLAVOR": "The bigger they are, the harder they fall.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Enemies in combats have #b",
+      "% more HP."
+    ]
+  },
+  "energizedSpire:StickyHand": {
+    "NAME": "Sticky Hand",
+    "FLAVOR": "This relic is definitely going to come in handy.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Whenever you would take a card in a future card reward, you take ALL the offered cards instead."
+    ]
   }
 }

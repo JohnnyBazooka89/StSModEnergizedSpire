@@ -3,12 +3,14 @@ package energizedSpire;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
-import basemod.interfaces.*;
-import energizedSpire.relics.*;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import energizedSpire.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -71,6 +73,8 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.addRelic(new HugeHouse(), RelicType.SHARED);
         BaseMod.addRelic(new OgreHead(), RelicType.SHARED);
         BaseMod.addRelic(new EnergizedDie(), RelicType.SHARED);
+        BaseMod.addRelic(new MagnifyingGlass(), RelicType.SHARED);
+        BaseMod.addRelic(new StickyHand(), RelicType.SHARED);
 
         logger.info("Done editing relics");
     }

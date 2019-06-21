@@ -5,7 +5,7 @@
 
     <groupId>StSMod</groupId>
     <artifactId>StSModEnergizedSpire</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
     <name>StSModEnergizedSpire</name>
     <description>This is a content mod for Slay the Spire that adds a lot of new Energy relics to the boss relic pool!</description>
@@ -38,6 +38,13 @@
             <version>5.4.0</version>
             <scope>system</scope>
             <systemPath>${slayTheSpirePath}\..\..\workshop\content\646570\1605833019\BaseMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl</groupId>
+            <artifactId>Halation</artifactId>
+            <version>5.4.0</version>
+            <scope>system</scope>
+            <systemPath>${slayTheSpirePath}\..\..\workshop\content\646570\1609810237\Halation.jar</systemPath>
         </dependency>
     </dependencies>
 
