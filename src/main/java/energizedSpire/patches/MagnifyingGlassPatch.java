@@ -14,9 +14,7 @@ public class MagnifyingGlassPatch {
 
         if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null) {
             if (AbstractDungeon.player.hasRelic(MagnifyingGlass.ID) && !abstractCreature.isPlayer) {
-                System.out.println("bef" + scale[0]);
                 scale[0] -= 0.2F;
-                System.out.println("aft" + scale[0]);
             }
         }
     }
