@@ -39,13 +39,6 @@
             <scope>system</scope>
             <systemPath>${slayTheSpirePath}\..\..\workshop\content\646570\1605833019\BaseMod.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>com.evacipated.cardcrawl</groupId>
-            <artifactId>Halation</artifactId>
-            <version>5.4.0</version>
-            <scope>system</scope>
-            <systemPath>${slayTheSpirePath}\..\..\workshop\content\646570\1609810237\Halation.jar</systemPath>
-        </dependency>
     </dependencies>
 
     <build>
