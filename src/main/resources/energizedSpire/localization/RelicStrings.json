@@ -1,10 +1,10 @@
 {
-  "energizedSpire:DeflatedTyre": {
-    "NAME": "Deflated Tyre",
-    "FLAVOR": "You won't get too far with a deflated tyre.",
+  "energizedSpire:DecayingSkull": {
+    "NAME": "Decaying Skull",
+    "FLAVOR": "Find the other one too! They are great together.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of combat, lose #b",
-      " #yStrength."
+      "Gain [E] at the start of your turn. If your HP is above #b50%, lose #b",
+      " HP at the end of your turn."
     ]
   },
   "energizedSpire:HighHeels": {
@@ -19,8 +19,8 @@
     "NAME": "Old TV",
     "FLAVOR": "Too old to use, too good to throw away.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of combat, lose #b",
-      " #yFocus."
+      "Gain [E] at the start of your turn. At the start of combat, shuffle #b",
+      " #renergizedspire:Reception Problems into your draw pile."
     ]
   },
   "energizedSpire:DeadBattery": {

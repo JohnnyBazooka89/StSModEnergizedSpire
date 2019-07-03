@@ -1,0 +1,9 @@
+{
+  "energizedSpire:RegainFocusPower": {
+    "NAME": "Regain Focus",
+    "DESCRIPTIONS": [
+      "At the beginning of your next turn regain #b",
+      " Focus."
+    ]
+  }
+}
