@@ -1,7 +1,7 @@
 {
   "energizedSpire:DecayingSkull": {
     "NAME": "Decaying Skull",
-    "FLAVOR": "Find the other one too! They are great together.",
+    "FLAVOR": "Find the other one too! Is this the beginning of a new collection?",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. If your HP is above #b50%, lose #b",
       " HP at the end of your turn."
@@ -11,7 +11,8 @@
     "NAME": "High Heels",
     "FLAVOR": "Elegant, but not very comfortable for the combat.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of combat, lose #b",
+      "Gain [E] at the start of your turn. Upon pickup, obtain #b",
+      " #rClumsy. At the start of combat, lose #b",
       " #yDexterity."
     ]
   },
@@ -38,7 +39,7 @@
     "FLAVOR": "Use it to catch your enemies, not to catch yourself...",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Every ",
-      " turns gain #yEntangled for #b",
+      " turns, gain #yEntangled for #b",
       " turn."
     ]
   },
@@ -47,7 +48,7 @@
     "FLAVOR": "Don't mess with the force you don't understand...",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Obtain a #rCurse for every #b",
-      " cards added to your deck while you have this relic."
+      " non-Curse cards added to your deck while you have this relic."
     ]
   },
   "energizedSpire:RedRose": {
