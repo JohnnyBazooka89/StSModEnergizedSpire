@@ -76,6 +76,8 @@
                         <configuration>
                             <target>
                                 <copy file="target/EnergizedSpireMod.jar" tofile="${slayTheSpirePath}\mods\EnergizedSpireMod.jar"/>
+                                <copy file="target/EnergizedSpireMod.jar"
+                                      tofile="${slayTheSpirePath}\EnergizedSpireMod\content\EnergizedSpireMod.jar"/>
                             </target>
                         </configuration>
                         <goals>
