@@ -34,36 +34,36 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     private static final String DESCRIPTION = "";
 
     //Badge
-    private static final String BADGE_IMG = "energized_spire/img/ModBadge.png";
+    private static final String BADGE_IMG = "energizedSpire/img/ModBadge.png";
 
     //Localization strings
-    private static final String RELIC_STRINGS_PATH = "energized_spire/localization/RelicStrings.json";
-    private static final String CARD_STRINGS_PATH = "energized_spire/localization/CardStrings.json";
-    private static final String KEYWORD_STRINGS_PATH = "energized_spire/localization/KeywordStrings.json";
-    private static final String POWER_STRINGS_PATH = "energized_spire/localization/PowerStrings.json";
+    private static final String RELIC_STRINGS_PATH = "energizedSpire/localization/RelicStrings.json";
+    private static final String CARD_STRINGS_PATH = "energizedSpire/localization/CardStrings.json";
+    private static final String KEYWORD_STRINGS_PATH = "energizedSpire/localization/KeywordStrings.json";
+    private static final String POWER_STRINGS_PATH = "energizedSpire/localization/PowerStrings.json";
 
     public EnergizedSpireMod() {
         BaseMod.subscribe(this);
     }
 
     public static String getRelicImagePath(String cardID) {
-        return "energized_spire/img/relics/" + cardID.replaceFirst("energizedSpire:", "") + ".png";
+        return "energizedSpire/img/relics/" + cardID.replaceFirst("energizedSpire:", "") + ".png";
     }
 
     public static String getRelicOutlineImagePath(String cardID) {
-        return "energized_spire/img/relics/outlines/" + cardID.replaceFirst("energizedSpire:", "") + ".png";
+        return "energizedSpire/img/relics/outlines/" + cardID.replaceFirst("energizedSpire:", "") + ".png";
     }
 
     public static String getCardImagePath(String cardId) {
-        return "energized_spire/img/cards/" + cardId.replaceFirst("energizedSpire:", "") + ".png";
+        return "energizedSpire/img/cards/" + cardId.replaceFirst("energizedSpire:", "") + ".png";
     }
 
     public static String getPower128ImagePath(String powerId) {
-        return "energized_spire/img/powers/128/" + powerId.replaceFirst("energizedSpire:", "").replaceFirst("Power", "") + ".png";
+        return "energizedSpire/img/powers/128/" + powerId.replaceFirst("energizedSpire:", "").replaceFirst("Power", "") + ".png";
     }
 
     public static String getPower48ImagePath(String powerId) {
-        return "energized_spire/img/powers/48/" + powerId.replaceFirst("energizedSpire:", "").replaceFirst("Power", "") + ".png";
+        return "energizedSpire/img/powers/48/" + powerId.replaceFirst("energizedSpire:", "").replaceFirst("Power", "") + ".png";
     }
 
     public static void initialize() {
