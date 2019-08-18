@@ -62,7 +62,7 @@ public class SpiderWeb extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + AMOUNT_OF_TURNS_TO_GAIN_ENTANGLED + DESCRIPTIONS[1] + +ENTANGLED_TURNS + DESCRIPTIONS[2];
+        return DESCRIPTIONS[0] + AMOUNT_OF_TURNS_TO_GAIN_ENTANGLED + DESCRIPTIONS[1] + ENTANGLED_TURNS + DESCRIPTIONS[2];
     }
 
 }

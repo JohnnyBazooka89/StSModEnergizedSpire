@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -38,15 +39,19 @@ public class EnergizedDie extends CustomRelic {
     private static final RelicStrings velvetChokerStrings = CardCrawlGame.languagePack.getRelicStrings(VelvetChoker.ID);
 
     private EnergizedDieEffect currentEffect;
+    private boolean obtained;
 
     public EnergizedDie() {
         super(ID, IMG_CURSED_KEY, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
         currentEffect = EnergizedDieEffect.CURSED_KEY;
+        obtained = false;
     }
 
     @Override
     public void onEquip() {
         ++AbstractDungeon.player.energy.energyMaster;
+        obtained = true;
+        initializeTips();
     }
 
     @Override
@@ -153,6 +158,7 @@ public class EnergizedDie extends CustomRelic {
                 break;
         }
         setImageBasedOnCurrentEffect();
+        initializeTips();
     }
 
     private void setImageBasedOnCurrentEffect() {
@@ -175,6 +181,34 @@ public class EnergizedDie extends CustomRelic {
             case VELVET_CHOKER:
                 setTextureOutline(IMG_VELVET_CHOKER, OUTLINE);
                 break;
+        }
+    }
+
+    @Override
+    protected void initializeTips() {
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        if (obtained) {
+            switch (currentEffect) {
+                case CURSED_KEY:
+                    this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
+                    break;
+                case SOZU:
+                    this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[3]));
+                    break;
+                case ECTOPLASM:
+                    this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[4]));
+                    break;
+                case RUNIC_DOME:
+                    this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[5]));
+                    break;
+                case PHILOSOPHERS_STONE:
+                    this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[6]));
+                    break;
+                case VELVET_CHOKER:
+                    this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[7]));
+                    break;
+            }
         }
     }
 
