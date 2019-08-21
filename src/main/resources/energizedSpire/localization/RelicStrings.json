@@ -106,5 +106,29 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Whenever you would take a card in a future card reward, you take ALL the offered cards instead."
     ]
+  },
+  "energizedSpire:TabascoSauce": {
+    "NAME": "Tabasco Sauce",
+    "FLAVOR": "Ah, that's hot! That is hot!",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Reduce increasing max HP and in-combat healing effects by #b",
+      "%."
+    ]
+  },
+  "energizedSpire:PogoStick": {
+    "NAME": "Pogo Stick",
+    "FLAVOR": "Boing, boing, boing...",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Whenever you end a turn without discarding a card, draw #b",
+      " fewer card next turn."
+    ]
+  },
+  "energizedSpire:UnstableMolecules": {
+    "NAME": "Unstable Molecules",
+    "FLAVOR": "Maybe they should just visit a psychiatrist.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. When an orb uses its passive ability #b",
+      " times, it is removed."
+    ]
   }
 }

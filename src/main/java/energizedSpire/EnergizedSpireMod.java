@@ -90,6 +90,9 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.addRelic(new DecayingSkull(), RelicType.RED);
         BaseMod.addRelic(new HighHeels(), RelicType.GREEN);
         BaseMod.addRelic(new OldTV(), RelicType.BLUE);
+        BaseMod.addRelic(new TabascoSauce(), RelicType.RED);
+        BaseMod.addRelic(new PogoStick(), RelicType.GREEN);
+        BaseMod.addRelic(new UnstableMolecules(), RelicType.BLUE);
         BaseMod.addRelic(new CursedPentagram(), RelicType.SHARED);
         BaseMod.addRelic(new DeadBattery(), RelicType.SHARED);
         BaseMod.addRelic(new RedRose(), RelicType.SHARED);
