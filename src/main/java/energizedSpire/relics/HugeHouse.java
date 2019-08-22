@@ -36,8 +36,8 @@ public class HugeHouse extends CustomRelic {
         loseARandomPotion();
         loseGold();
         lowerMaxHP();
-        obtainACurse();
         obtainAStrike();
+        obtainACurse();
     }
 
     private void loseARandomPotion() {
@@ -55,13 +55,13 @@ public class HugeHouse extends CustomRelic {
         AbstractDungeon.player.decreaseMaxHealth(MAX_HP_TO_LOSE);
     }
 
-    private void obtainACurse() {
-        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.returnRandomCurse(), Settings.WIDTH * 0.4F, Settings.HEIGHT / 2.0F));
-    }
-
     private void obtainAStrike() {
         AbstractCard strike = getClassSpecificStrike();
-        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(strike, Settings.WIDTH * 0.6F, Settings.HEIGHT / 2.0F));
+        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(strike, Settings.WIDTH * 0.4F, Settings.HEIGHT / 2.0F));
+    }
+
+    private void obtainACurse() {
+        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.returnRandomCurse(), Settings.WIDTH * 0.6F, Settings.HEIGHT / 2.0F));
     }
 
     private AbstractCard getClassSpecificStrike() {

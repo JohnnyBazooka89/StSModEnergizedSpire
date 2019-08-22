@@ -67,8 +67,8 @@
       " random potion. Lose #b",
       " Gold. Lower your Max HP by #b",
       ". Obtain #b",
-      " #rCurse. Obtain #b",
-      " basic Strike."
+      " #rStrike. Obtain #b",
+      " #rCurse."
     ]
   },
   "energizedSpire:OgreHead": {
