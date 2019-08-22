@@ -127,7 +127,7 @@
     "NAME": "Unstable Molecules",
     "FLAVOR": "Maybe they should just visit a psychiatrist.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. When an orb uses its passive ability #b",
+      "Gain [E] at the start of your turn. When an orb triggers its passive ability #b",
       " times, it is removed."
     ]
   }
