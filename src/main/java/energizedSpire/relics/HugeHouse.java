@@ -1,5 +1,6 @@
 package energizedSpire.relics;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Texture;
@@ -10,8 +11,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import energizedSpire.EnergizedSpireMod;
+import energizedSpire.effects.AbstractGameEffectDelayedByAnotherOneEffect;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HugeHouse extends CustomRelic {
 
@@ -22,8 +29,8 @@ public class HugeHouse extends CustomRelic {
     public static final int POTIONS_TO_LOSE = 1;
     public static final int GOLD_TO_LOSE = 50;
     public static final int MAX_HP_TO_LOSE = 5;
-    public static final int CURSES_TO_OBTAIN = 1;
     public static final int STRIKES_TO_OBTAIN = 1;
+    public static final int CARDS_TO_TRANSFORM = 1;
 
     public HugeHouse() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
@@ -37,7 +44,7 @@ public class HugeHouse extends CustomRelic {
         loseGold();
         lowerMaxHP();
         obtainAStrike();
-        obtainACurse();
+        transformARandomCard();
     }
 
     private void loseARandomPotion() {
@@ -60,14 +67,40 @@ public class HugeHouse extends CustomRelic {
         AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(strike, Settings.WIDTH * 0.4F, Settings.HEIGHT / 2.0F));
     }
 
-    private void obtainACurse() {
-        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.returnRandomCurse(), Settings.WIDTH * 0.6F, Settings.HEIGHT / 2.0F));
+    private void transformARandomCard() {
+        List<AbstractCard> transformableCards = new ArrayList<>();
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.getPurgeableCards().group) {
+            if (c.rarity != AbstractCard.CardRarity.CURSE && c.rarity != AbstractCard.CardRarity.BASIC) {
+                transformableCards.add(c);
+            }
+        }
+        if (transformableCards.isEmpty()) {
+            for (AbstractCard c : AbstractDungeon.player.masterDeck.getPurgeableCards().group) {
+                if (c.rarity == AbstractCard.CardRarity.BASIC) {
+                    transformableCards.add(c);
+                }
+            }
+        }
+        if (!transformableCards.isEmpty()) {
+            AbstractCard cardToTransform = transformableCards.get(AbstractDungeon.miscRng.random(transformableCards.size() - 1));
+            AbstractDungeon.player.masterDeck.removeCard(cardToTransform);
+            AbstractDungeon.transformCard(cardToTransform, false, AbstractDungeon.miscRng);
+            if (AbstractDungeon.transformedCard != null) {
+                float positionX = Settings.WIDTH * 0.6F;
+                AbstractGameEffect purgeCardEffect = new PurgeCardEffect(
+                        cardToTransform, positionX, Settings.HEIGHT / 2.0F);
+                ReflectionHacks.getPrivate(purgeCardEffect, PurgeCardEffect.class, "card");
+                cardToTransform.target_x = positionX;
+                AbstractDungeon.topLevelEffectsQueue.add(new AbstractGameEffectDelayedByAnotherOneEffect(new ShowCardAndObtainEffect(
+                        AbstractDungeon.getTransformedCard(), positionX, Settings.HEIGHT / 2.0F, false), purgeCardEffect));
+            }
+        }
     }
 
     private AbstractCard getClassSpecificStrike() {
         for (AbstractCard card : CardLibrary.getAllCards()) {
             if (card.color == AbstractDungeon.player.getCardColor() && card.hasTag(BaseModCardTags.BASIC_STRIKE)) {
-                return card;
+                return card.makeCopy();
             }
         }
         return new Strike_Red();
@@ -80,7 +113,7 @@ public class HugeHouse extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + POTIONS_TO_LOSE + DESCRIPTIONS[1] + GOLD_TO_LOSE + DESCRIPTIONS[2] + MAX_HP_TO_LOSE + DESCRIPTIONS[3] + CURSES_TO_OBTAIN + DESCRIPTIONS[4] + STRIKES_TO_OBTAIN + DESCRIPTIONS[5];
+        return DESCRIPTIONS[0] + POTIONS_TO_LOSE + DESCRIPTIONS[1] + GOLD_TO_LOSE + DESCRIPTIONS[2] + MAX_HP_TO_LOSE + DESCRIPTIONS[3] + STRIKES_TO_OBTAIN + DESCRIPTIONS[4] + CARDS_TO_TRANSFORM + DESCRIPTIONS[5];
     }
 
     @Override
