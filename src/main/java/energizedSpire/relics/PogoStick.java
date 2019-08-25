@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import energizedSpire.EnergizedSpireMod;
 
 public class PogoStick extends CustomRelic {
@@ -23,6 +24,9 @@ public class PogoStick extends CustomRelic {
     @Override
     public void onEquip() {
         ++AbstractDungeon.player.energy.energyMaster;
+        if (AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+            turnOn();
+        }
     }
 
     @Override
