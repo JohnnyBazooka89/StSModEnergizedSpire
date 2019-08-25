@@ -13,12 +13,10 @@ public class TabascoSaucePatches {
     @SpirePatch(clz = AbstractCreature.class, method = "heal", paramtypez = {int.class, boolean.class})
     public static class HealPatch {
         public static void Prefix(AbstractCreature creature, @ByRef int[] healAmount, boolean showEffect) {
-            if (AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
-                if (creature instanceof AbstractPlayer) {
-                    AbstractPlayer player = (AbstractPlayer) creature;
-                    if (player.hasRelic(TabascoSauce.ID)) {
-                        healAmount[0] /= 2;
-                    }
+            if (AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && creature instanceof AbstractPlayer) {
+                AbstractPlayer player = (AbstractPlayer) creature;
+                if (player.hasRelic(TabascoSauce.ID)) {
+                    healAmount[0] /= 2;
                 }
             }
         }
@@ -28,7 +26,7 @@ public class TabascoSaucePatches {
     public static class IncreaseMaxHPPartOnePatch {
 
         @SpireInsertPatch(locator = PartOneLocator.class, localvars = "amount")
-        public static void Insert(AbstractCreature creature, int _amount, boolean showEffect, @ByRef int[] amount) {
+        public static void Insert(AbstractCreature creature, int amount_, boolean showEffect, @ByRef int[] amount) {
             if (creature instanceof AbstractPlayer) {
                 AbstractPlayer player = (AbstractPlayer) creature;
                 if (player.hasRelic(TabascoSauce.ID)) {
@@ -52,7 +50,7 @@ public class TabascoSaucePatches {
     public static class IncreaseMaxHPPartTwoPatch {
 
         @SpireInsertPatch(locator = PartTwoLocator.class, localvars = "amount")
-        public static void Insert(AbstractCreature creature, int _amount, boolean showEffect, @ByRef int[] amount) {
+        public static void Insert(AbstractCreature creature, int amount_, boolean showEffect, @ByRef int[] amount) {
             if (creature instanceof AbstractPlayer) {
                 AbstractPlayer player = (AbstractPlayer) creature;
                 if (player.hasRelic(TabascoSauce.ID)) {
