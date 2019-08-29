@@ -1,6 +1,5 @@
 package energizedSpire.relics;
 
-import basemod.ReflectionHacks;
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Texture;
@@ -89,7 +88,6 @@ public class HugeHouse extends CustomRelic {
                 float positionX = Settings.WIDTH * 0.6F;
                 AbstractGameEffect purgeCardEffect = new PurgeCardEffect(
                         cardToTransform, positionX, Settings.HEIGHT / 2.0F);
-                ReflectionHacks.getPrivate(purgeCardEffect, PurgeCardEffect.class, "card");
                 cardToTransform.target_x = positionX;
                 AbstractDungeon.topLevelEffectsQueue.add(new AbstractGameEffectDelayedByAnotherOneEffect(new ShowCardAndObtainEffect(
                         AbstractDungeon.getTransformedCard(), positionX, Settings.HEIGHT / 2.0F, false), purgeCardEffect));
