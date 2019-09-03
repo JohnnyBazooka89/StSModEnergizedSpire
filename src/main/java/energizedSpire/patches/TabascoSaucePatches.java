@@ -66,12 +66,12 @@ public class TabascoSaucePatches {
     @SpirePatch(clz = AbstractCreature.class, method = "increaseMaxHp")
     public static class IncreaseMaxHPPartThreePatch {
 
-        @SpireInsertPatch(locator = PartTwoLocator.class)
+        @SpireInsertPatch(locator = PartThreeLocator.class)
         public static void Insert(AbstractCreature creature, int amount, boolean showEffect) {
             isHealingCalledByIncreasingMaxHP = false;
         }
 
-        private static class PartTwoLocator extends SpireInsertLocator {
+        private static class PartThreeLocator extends SpireInsertLocator {
             @Override
             public int[] Locate(CtBehavior method) throws Exception {
                 Matcher matcher = new Matcher.MethodCallMatcher(AbstractCreature.class, "healthBarUpdatedEvent");
