@@ -3,8 +3,8 @@
     "NAME": "Decaying Skull",
     "FLAVOR": "Find the other one too! Is this the beginning of a new collection?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. If your HP is above #b50%, lose #b",
-      " HP at the end of your turn."
+      "Gain [E] at the start of your turn. At the end of your turn, if your HP is above #b50%, lose #b",
+      " HP."
     ]
   },
   "energizedSpire:HighHeels": {
@@ -38,7 +38,7 @@
     "NAME": "Spider Web",
     "FLAVOR": "Use it to catch your enemies, not to catch yourself...",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Every ",
+      "Gain [E] at the start of your turn. Every #b",
       " turns, gain #yEntangled for #b",
       " turn."
     ]
@@ -56,14 +56,14 @@
     "FLAVOR": "There is no rose without a thorn.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. ALL enemies start combat with #b",
-      " stack of #yThorns."
+      " #yThorns."
     ]
   },
   "energizedSpire:HugeHouse": {
     "NAME": "Huge House",
     "FLAVOR": "Is it adequate enough?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Lose #b",
+      "Gain [E] at the start of your turn. Upon pickup, lose #b",
       " random potion. Lose #b",
       " Gold. Lower your Max HP by #b",
       ". Obtain #b",
@@ -75,7 +75,7 @@
     "NAME": "Ogre Head",
     "FLAVOR": "Me smash you! Wait... who?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Whenever you play a card, you have 50% chance to target another enemy."
+      "Gain [E] at the start of your turn. Whenever you play a card, you have #b50% chance to target another enemy."
     ]
   },
   "energizedSpire:EnergizedDie": {
