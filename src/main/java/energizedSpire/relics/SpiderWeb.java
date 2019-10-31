@@ -18,7 +18,7 @@ public class SpiderWeb extends CustomRelic {
     public static final Texture IMG = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(ID));
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
 
-    public static final int AMOUNT_OF_TURNS_TO_GAIN_ENTANGLED = 5;
+    public static final int AMOUNT_OF_TURNS_TO_GAIN_ENTANGLED = 6;
     public static final int ENTANGLED_TURNS = 1;
 
     private static final PowerStrings ENTANGLED_POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(EntanglePower.POWER_ID);
