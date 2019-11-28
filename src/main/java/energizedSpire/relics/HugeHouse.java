@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
@@ -33,6 +34,7 @@ public class HugeHouse extends CustomRelic {
 
     public HugeHouse() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        refreshTips();
     }
 
     @Override
@@ -114,9 +116,10 @@ public class HugeHouse extends CustomRelic {
         return DESCRIPTIONS[0] + POTIONS_TO_LOSE + DESCRIPTIONS[1] + GOLD_TO_LOSE + DESCRIPTIONS[2] + MAX_HP_TO_LOSE + DESCRIPTIONS[3] + STRIKES_TO_OBTAIN + DESCRIPTIONS[4] + CARDS_TO_TRANSFORM + DESCRIPTIONS[5];
     }
 
-    @Override
-    public void initializeTips() {
-        super.initializeTips();
+    public void refreshTips() {
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
         this.tips.removeIf(tip -> tip.header.equalsIgnoreCase("strike"));
     }
 }

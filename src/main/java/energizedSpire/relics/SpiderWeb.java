@@ -25,6 +25,7 @@ public class SpiderWeb extends CustomRelic {
 
     public SpiderWeb() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        refreshTips();
     }
 
     @Override
@@ -54,15 +55,15 @@ public class SpiderWeb extends CustomRelic {
     }
 
     @Override
-    protected void initializeTips() {
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(ENTANGLED_POWER_STRINGS.NAME, ENTANGLED_POWER_STRINGS.DESCRIPTIONS[0]));
-    }
-
-    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + AMOUNT_OF_TURNS_TO_GAIN_ENTANGLED + DESCRIPTIONS[1] + ENTANGLED_TURNS + DESCRIPTIONS[2];
+    }
+
+    public void refreshTips() {
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
+        this.tips.add(new PowerTip(ENTANGLED_POWER_STRINGS.NAME, ENTANGLED_POWER_STRINGS.DESCRIPTIONS[0]));
     }
 
 }

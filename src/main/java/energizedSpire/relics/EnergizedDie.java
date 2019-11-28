@@ -45,13 +45,14 @@ public class EnergizedDie extends CustomRelic {
         super(ID, IMG_CURSED_KEY, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
         currentEffect = EnergizedDieEffect.CURSED_KEY;
         obtained = false;
+        refreshTips();
     }
 
     @Override
     public void onEquip() {
         ++AbstractDungeon.player.energy.energyMaster;
         obtained = true;
-        initializeTips();
+        refreshTips();
     }
 
     @Override
@@ -158,7 +159,7 @@ public class EnergizedDie extends CustomRelic {
                 break;
         }
         setImageBasedOnCurrentEffect();
-        initializeTips();
+        refreshTips();
     }
 
     private void setImageBasedOnCurrentEffect() {
@@ -184,10 +185,10 @@ public class EnergizedDie extends CustomRelic {
         }
     }
 
-    @Override
-    protected void initializeTips() {
+    public void refreshTips() {
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
         if (obtained) {
             switch (currentEffect) {
                 case CURSED_KEY:
