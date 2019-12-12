@@ -3,8 +3,8 @@
     "NAME": "Decaying Skull",
     "FLAVOR": "Find the other one too! Is this the beginning of a new collection?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the end of your turn, if your HP is above #b50%, lose #b",
-      " HP."
+      "Gain [E] at the start of your turn. At the end of your turn, if your HP is above #b50%, take #b",
+      " damage."
     ]
   },
   "energizedSpire:HighHeels": {
