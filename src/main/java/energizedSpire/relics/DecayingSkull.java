@@ -13,7 +13,7 @@ import energizedSpire.EnergizedSpireMod;
 public class DecayingSkull extends CustomRelic {
 
     public static final String ID = "energizedSpire:DecayingSkull";
-    private static final int DAMAGE_TO_TAKE = 2;
+    private static final int DAMAGE_TO_TAKE = 3;
 
     public static final Texture IMG = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(ID));
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
