@@ -130,5 +130,19 @@
       "Gain [E] at the start of your turn. When an orb triggers its passive ability #b",
       " times, it is removed."
     ]
+  },
+  "energizedSpire:BlackCloud": {
+    "NAME": "Black Cloud",
+    "FLAVOR": "There is always sunshine above the black clouds.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Start each combat in #yenergizedspire:Depression."
+    ]
+  },
+  "energizedSpire:CrystalSphere": {
+    "NAME": "Crystal Sphere",
+    "FLAVOR": "You can use it to predict the future. But should you do it?",
+    "DESCRIPTIONS": [
+      "The first time you #yScry each turn, gain [E] [REMOVE_SPACE]."
+    ]
   }
 }

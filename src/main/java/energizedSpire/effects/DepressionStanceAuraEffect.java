@@ -16,7 +16,7 @@ public class DepressionStanceAuraEffect extends AbstractGameEffect {
     private float y;
     private float vY;
     private TextureAtlas.AtlasRegion img;
-    public static boolean switcher = true;
+    public boolean switcher = true;
 
     public DepressionStanceAuraEffect() {
         this.img = ImageMaster.EXHAUST_L;
@@ -30,7 +30,6 @@ public class DepressionStanceAuraEffect extends AbstractGameEffect {
         this.x -= (float) this.img.packedWidth / 2.0F;
         this.y -= (float) this.img.packedHeight / 2.0F;
         switcher = !switcher;
-        this.renderBehind = true;
         this.rotation = MathUtils.random(360.0F);
         if (switcher) {
             this.renderBehind = true;
@@ -42,6 +41,7 @@ public class DepressionStanceAuraEffect extends AbstractGameEffect {
 
     }
 
+    @Override
     public void update() {
         if (this.duration > 1.0F) {
             this.color.a = Interpolation.fade.apply(0.6F, 0.0F, this.duration - 1.0F);

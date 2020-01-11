@@ -11,9 +11,9 @@ import energizedSpire.effects.DepressionParticleEffect;
 import energizedSpire.effects.DepressionStanceAuraEffect;
 
 public class DepressionStance extends AbstractStance {
-    public static final String STANCE_ID = "Depression";
-    private static final StanceStrings stanceString;
-    private static long sfxId;
+    public static final String STANCE_ID = "energizedSpire:DepressionStance";
+    private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
+    private static long sfxId = -1L;
 
     public DepressionStance() {
         this.ID = STANCE_ID;
@@ -21,6 +21,7 @@ public class DepressionStance extends AbstractStance {
         this.updateDescription();
     }
 
+    @Override
     public void updateAnimation() {
         if (!Settings.DISABLE_EFFECTS) {
             this.particleTimer -= Gdx.graphics.getDeltaTime();
@@ -38,10 +39,12 @@ public class DepressionStance extends AbstractStance {
         }
     }
 
+    @Override
     public void updateDescription() {
         this.description = stanceString.DESCRIPTION[0];
     }
 
+    @Override
     public void onEnterStance() {
         if (sfxId != -1L) {
             this.stopIdleSfx();
@@ -51,10 +54,12 @@ public class DepressionStance extends AbstractStance {
         sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_WRATH");
     }
 
+    @Override
     public void onExitStance() {
         this.stopIdleSfx();
     }
 
+    @Override
     public void stopIdleSfx() {
         if (sfxId != -1L) {
             CardCrawlGame.sound.stop("STANCE_LOOP_WRATH", sfxId);
@@ -62,8 +67,4 @@ public class DepressionStance extends AbstractStance {
         }
     }
 
-    static {
-        stanceString = CardCrawlGame.languagePack.getStanceString("Wrath");
-        sfxId = -1L;
-    }
 }

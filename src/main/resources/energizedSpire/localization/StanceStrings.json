@@ -1,0 +1,8 @@
+{
+  "energizedSpire:DepressionStance": {
+    "NAME": "Depression",
+    "DESCRIPTION": [
+      "You draw 1 fewer card each turn."
+    ]
+  }
+}

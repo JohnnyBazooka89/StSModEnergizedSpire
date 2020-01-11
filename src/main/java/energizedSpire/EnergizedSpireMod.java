@@ -10,10 +10,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.KeywordStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.*;
 import energizedSpire.cards.ReceptionProblems;
 import energizedSpire.relics.*;
 import org.apache.logging.log4j.LogManager;
@@ -41,6 +38,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     private static final String CARD_STRINGS_PATH = "energizedSpire/localization/CardStrings.json";
     private static final String KEYWORD_STRINGS_PATH = "energizedSpire/localization/KeywordStrings.json";
     private static final String POWER_STRINGS_PATH = "energizedSpire/localization/PowerStrings.json";
+    private static final String STANCE_STRINGS_PATH = "energizedSpire/localization/StanceStrings.json";
 
     public EnergizedSpireMod() {
         BaseMod.subscribe(this);
@@ -90,9 +88,11 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.addRelic(new DecayingSkull(), RelicType.RED);
         BaseMod.addRelic(new HighHeels(), RelicType.GREEN);
         BaseMod.addRelic(new OldTV(), RelicType.BLUE);
+        BaseMod.addRelic(new BlackCloud(), RelicType.PURPLE);
         BaseMod.addRelic(new TabascoSauce(), RelicType.RED);
         BaseMod.addRelic(new PogoStick(), RelicType.GREEN);
         BaseMod.addRelic(new UnstableMolecules(), RelicType.BLUE);
+        BaseMod.addRelic(new CrystalSphere(), RelicType.PURPLE);
         BaseMod.addRelic(new CursedPentagram(), RelicType.SHARED);
         BaseMod.addRelic(new DeadBattery(), RelicType.SHARED);
         BaseMod.addRelic(new RedRose(), RelicType.SHARED);
@@ -124,6 +124,8 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.loadCustomStringsFile(KeywordStrings.class, KEYWORD_STRINGS_PATH);
         //Power Strings
         BaseMod.loadCustomStringsFile(PowerStrings.class, POWER_STRINGS_PATH);
+        //Stance Strings
+        BaseMod.loadCustomStringsFile(StanceStrings.class, STANCE_STRINGS_PATH);
 
         logger.info("Done editing strings");
     }

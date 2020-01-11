@@ -5,5 +5,12 @@
       "reception problems"
     ],
     "DESCRIPTION": "Reception Problems is an unplayable status card that when drawn makes you lose 2 Focus until the beginning of your next turn."
+  },
+  "energizedSpire:DepressionKeyword": {
+    "PROPER_NAME": "Depression",
+    "NAMES": [
+      "depression"
+    ],
+    "DESCRIPTION": "In this #yStance, you draw 1 fewer card each turn."
   }
 }

@@ -32,6 +32,7 @@ public class DepressionParticleEffect extends AbstractGameEffect {
         this.rotation = MathUtils.random(-8.0F, 8.0F);
     }
 
+    @Override
     public void update() {
         if (this.duration > this.dur_div2) {
             this.color.a = Interpolation.fade.apply(0.0F, 0.0F, (this.duration - this.dur_div2) / this.dur_div2);

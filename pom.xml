@@ -5,7 +5,7 @@
 
     <groupId>StSMod</groupId>
     <artifactId>StSModEnergizedSpire</artifactId>
-    <version>1.4.11</version>
+    <version>1.5.0</version>
     <packaging>jar</packaging>
     <name>StSModEnergizedSpire</name>
     <description>This is a content mod for Slay the Spire that adds a lot of new Energy relics to the boss relic pool!</description>
@@ -37,7 +37,7 @@
             <artifactId>BaseMod</artifactId>
             <version>5.14.0</version>
             <scope>system</scope>
-            <systemPath>${slayTheSpirePath}\..\..\workshop\content\646570\1605833019\BaseMod.jar</systemPath>
+            <systemPath>${slayTheSpirePath}\..\..\workshop\content\646570\1605833019\beta\BaseMod.jar</systemPath>
         </dependency>
     </dependencies>
 
