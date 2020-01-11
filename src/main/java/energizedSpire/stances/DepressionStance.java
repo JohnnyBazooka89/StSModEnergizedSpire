@@ -2,12 +2,13 @@ package energizedSpire.stances;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import energizedSpire.effects.DepressionParticleEffect;
+import energizedSpire.effects.DepressionStanceAuraEffect;
 
 public class DepressionStance extends AbstractStance {
     public static final String STANCE_ID = "Depression";
@@ -15,13 +16,9 @@ public class DepressionStance extends AbstractStance {
     private static long sfxId;
 
     public DepressionStance() {
-        this.ID = "Depression";
+        this.ID = STANCE_ID;
         this.name = stanceString.NAME;
         this.updateDescription();
-    }
-
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage * 0.5F : damage;
     }
 
     public void updateAnimation() {
@@ -39,7 +36,6 @@ public class DepressionStance extends AbstractStance {
 
             AbstractDungeon.effectsQueue.add(new DepressionStanceAuraEffect());
         }
-
     }
 
     public void updateDescription() {
@@ -53,8 +49,6 @@ public class DepressionStance extends AbstractStance {
 
         CardCrawlGame.sound.play("STANCE_ENTER_WRATH");
         sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_WRATH");
-        //AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.BLACK, true));
-        //AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, "Wrath"));
     }
 
     public void onExitStance() {
@@ -66,7 +60,6 @@ public class DepressionStance extends AbstractStance {
             CardCrawlGame.sound.stop("STANCE_LOOP_WRATH", sfxId);
             sfxId = -1L;
         }
-
     }
 
     static {

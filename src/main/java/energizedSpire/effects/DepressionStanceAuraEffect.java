@@ -1,4 +1,4 @@
-package energizedSpire.stances;
+package energizedSpire.effects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -23,9 +23,7 @@ public class DepressionStanceAuraEffect extends AbstractGameEffect {
         this.duration = 2.0F;
         this.scale = MathUtils.random(2.7F, 2.5F) * Settings.scale;
 
-        //float random = MathUtils.random(0.05F, 0.1F);
-        float random = 0.05f;
-        this.color = new Color(random, random, random, 0.0F);
+        this.color = new Color(0.05f, 0.05f, 0.05f, 0.0F);
 
         this.x = AbstractDungeon.player.hb.cX + MathUtils.random(-AbstractDungeon.player.hb.width / 16.0F, AbstractDungeon.player.hb.width / 16.0F);
         this.y = AbstractDungeon.player.hb.cY + MathUtils.random(-AbstractDungeon.player.hb.height / 16.0F, AbstractDungeon.player.hb.height / 12.0F);
@@ -60,8 +58,6 @@ public class DepressionStanceAuraEffect extends AbstractGameEffect {
 
     public void render(SpriteBatch sb) {
         sb.setColor(this.color);
-        //int number = AbstractDungeon.player.gold;
-        //int number2 = AbstractDungeon.player.maxHealth;
         sb.setBlendFunction(770, 771);
         sb.draw(this.img, this.x, this.y, (float) this.img.packedWidth / 2.0F, (float) this.img.packedHeight / 2.0F, (float) this.img.packedWidth, (float) this.img.packedHeight, this.scale, this.scale, this.rotation);
         sb.setBlendFunction(770, 771);

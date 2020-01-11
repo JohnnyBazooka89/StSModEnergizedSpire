@@ -1,4 +1,4 @@
-package energizedSpire.stances;
+package energizedSpire.effects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -23,8 +23,7 @@ public class DepressionParticleEffect extends AbstractGameEffect {
         this.duration = MathUtils.random(1.3F, 1.8F);
         this.scale = MathUtils.random(0.6F, 1.0F) * Settings.scale;
         this.dur_div2 = this.duration / 2.0F;
-        float random = MathUtils.random(0.2F, 0.2F);
-        this.color = new Color(random, random, random, 0.0F);
+        this.color = new Color(0.2F, 0.2F, 0.2F, 0.0F);
         this.x = AbstractDungeon.player.hb.cX + MathUtils.random(-AbstractDungeon.player.hb.width / 2.0F - 30.0F * Settings.scale, AbstractDungeon.player.hb.width / 2.0F + 30.0F * Settings.scale);
         this.y = AbstractDungeon.player.hb.cY + MathUtils.random(-AbstractDungeon.player.hb.height / 2.0F - -300.0F * Settings.scale, AbstractDungeon.player.hb.height / 2.0F - 100.0F * Settings.scale);
         this.x -= (float) this.img.packedWidth / 2.0F;
