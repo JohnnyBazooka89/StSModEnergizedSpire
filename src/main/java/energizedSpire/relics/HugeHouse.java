@@ -99,7 +99,7 @@ public class HugeHouse extends CustomRelic {
 
     private AbstractCard getClassSpecificStrike() {
         for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.color == AbstractDungeon.player.getCardColor() && card.hasTag(BaseModCardTags.BASIC_STRIKE)) {
+            if (card.color == AbstractDungeon.player.getCardColor() && (card.hasTag(BaseModCardTags.BASIC_STRIKE) || card.hasTag(AbstractCard.CardTags.STARTER_STRIKE))) {
                 return card.makeCopy();
             }
         }
