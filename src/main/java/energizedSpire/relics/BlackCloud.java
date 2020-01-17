@@ -32,7 +32,7 @@ public class BlackCloud extends CustomRelic {
     @Override
     public void atPreBattle() {
         this.flash();
-        this.addToTop(new ChangeStanceAction(DepressionStance.STANCE_ID));
+        this.addToTop(new ChangeStanceAction(new DepressionStance()));
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 

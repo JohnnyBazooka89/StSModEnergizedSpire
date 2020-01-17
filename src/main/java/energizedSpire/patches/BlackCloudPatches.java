@@ -10,7 +10,7 @@ import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.NewExpr;
 
-public class BlackCloudAmountOfCardsPatches {
+public class BlackCloudPatches {
 
     @SpirePatch(clz = GameActionManager.class, method = "getNextAction")
     public static class GameActionManagerPatch {
@@ -20,7 +20,7 @@ public class BlackCloudAmountOfCardsPatches {
                 public void edit(NewExpr newExpr) throws CannotCompileException {
                     if (newExpr.getClassName().equals(DrawCardAction.class.getName())) {
                         newExpr.replace(
-                                "$_ = $proceed($1, $2 - (" + BlackCloudAmountOfCardsPatches.class.getName() + ".getAmountOfCardsToDrawFewer()), $3);"
+                                "$_ = $proceed($1, $2 - (" + BlackCloudPatches.class.getName() + ".getAmountOfCardsToDrawFewer()), $3);"
                         );
                     }
                 }
@@ -38,7 +38,7 @@ public class BlackCloudAmountOfCardsPatches {
                     if (newExpr.getClassName().equals(DrawCardAction.class.getName())) {
                         if (counter[0] == 0) {
                             newExpr.replace(
-                                    "$_ = $proceed($1, $2 - (" + BlackCloudAmountOfCardsPatches.class.getName() + ".getAmountOfCardsToDrawFewer()));"
+                                    "$_ = $proceed($1, $2 - (" + BlackCloudPatches.class.getName() + ".getAmountOfCardsToDrawFewer()));"
                             );
                         }
                         counter[0]++;
