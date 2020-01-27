@@ -45,6 +45,11 @@ public class CursedPentagram extends CustomRelic {
     }
 
     @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.actNum <= 1;
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + CARDS_TO_ADD + DESCRIPTIONS[1];
     }
