@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import java.util.ArrayList;
 
 
-public class RemoveOrbAction extends AbstractGameAction {
+public class UnstableMoleculesRemoveOrbAction extends AbstractGameAction {
     private AbstractOrb orb;
 
-    public RemoveOrbAction(AbstractOrb orb) {
+    public UnstableMoleculesRemoveOrbAction(AbstractOrb orb) {
         this.orb = orb;
         this.duration = Settings.ACTION_DUR_FAST;
     }

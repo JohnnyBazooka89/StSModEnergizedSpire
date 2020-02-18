@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.orbs.*;
 import com.megacrit.cardcrawl.vfx.BobEffect;
-import energizedSpire.actions.RemoveOrbAction;
+import energizedSpire.actions.UnstableMoleculesDecreaseValueInOrbAction;
 import energizedSpire.relics.UnstableMolecules;
 
 public class UnstableMoleculesPatches {
@@ -133,14 +133,7 @@ public class UnstableMoleculesPatches {
 
         private static void decreaseValueInOrb(AbstractOrb orb) {
             if (AbstractDungeon.player.hasRelic(UnstableMolecules.ID)) {
-                Integer value = UnstableMoleculesFieldPatch.value.get(orb);
-                if (value != null && value != 0) {
-                    int newValue = value - 1;
-                    UnstableMoleculesFieldPatch.value.set(orb, newValue);
-                    if (newValue == 0) {
-                        AbstractDungeon.actionManager.addToBottom(new RemoveOrbAction(orb));
-                    }
-                }
+                AbstractDungeon.actionManager.addToBottom(new UnstableMoleculesDecreaseValueInOrbAction(orb));
             }
         }
     }
