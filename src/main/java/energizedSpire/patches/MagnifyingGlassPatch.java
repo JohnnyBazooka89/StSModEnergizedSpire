@@ -13,7 +13,7 @@ public class MagnifyingGlassPatch {
     public static void Prefix(AbstractCreature abstractCreature, String atlasUrl, String skeletonUrl, @ByRef float[] scale) {
 
         if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(MagnifyingGlass.ID) && !abstractCreature.isPlayer) {
-            scale[0] -= 0.2F;
+            scale[0] *= 0.8F;
         }
     }
 
