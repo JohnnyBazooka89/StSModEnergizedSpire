@@ -24,10 +24,10 @@ public class CursedPentagram extends CustomRelic {
 
     @Override
     public void onObtainCard(AbstractCard c) {
-        if(c.type != AbstractCard.CardType.CURSE){
+        if (c.type != AbstractCard.CardType.CURSE && c.rarity != AbstractCard.CardRarity.CURSE) {
             this.counter++;
         }
-        if(this.counter == CARDS_TO_ADD){
+        if (this.counter == CARDS_TO_ADD) {
             this.counter = 0;
             this.flash();
             AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.returnRandomCurse(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));

@@ -105,8 +105,8 @@ public class EnergizedDie extends CustomRelic {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER) && (this.counter < 6) && (card.type != AbstractCard.CardType.CURSE)) {
-            this.counter += 1;
+        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER) && this.counter < 6) {
+            this.counter++;
             if (this.counter >= 6) {
                 flash();
             }
@@ -116,7 +116,7 @@ public class EnergizedDie extends CustomRelic {
     @Override
     public boolean canPlay(AbstractCard card) {
         if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER)) {
-            if ((this.counter >= 6) && (card.type != AbstractCard.CardType.CURSE)) {
+            if (this.counter >= 6) {
                 card.cantUseMessage = (velvetChokerStrings.DESCRIPTIONS[3] + 6 + velvetChokerStrings.DESCRIPTIONS[1]);
                 return false;
             }

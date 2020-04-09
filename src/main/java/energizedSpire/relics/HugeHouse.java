@@ -71,7 +71,7 @@ public class HugeHouse extends CustomRelic {
     private void transformARandomCard() {
         List<AbstractCard> transformableCards = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.player.masterDeck.getPurgeableCards().group) {
-            if (c.rarity != AbstractCard.CardRarity.CURSE && c.rarity != AbstractCard.CardRarity.BASIC) {
+            if (c.type != AbstractCard.CardType.CURSE && c.rarity != AbstractCard.CardRarity.CURSE && c.rarity != AbstractCard.CardRarity.BASIC) {
                 transformableCards.add(c);
             }
         }
