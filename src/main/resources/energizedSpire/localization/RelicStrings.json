@@ -38,9 +38,9 @@
     "NAME": "Spider Web",
     "FLAVOR": "Use it to catch your enemies, not to catch yourself...",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Every #b",
-      " turns, gain #yEntangled for #b",
-      " turn."
+      "Gain [E] at the start of your turn. Start each combat with #b",
+      " #yEntangled and #b",
+      " #yStrength."
     ]
   },
   "energizedSpire:CursedPentagram": {
