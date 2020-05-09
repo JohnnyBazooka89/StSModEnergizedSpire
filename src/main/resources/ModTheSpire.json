@@ -9,7 +9,7 @@
   "dependencies": [
     "basemod"
   ],
-  "sts_version": "01-14-2020",
+  "sts_version": "01-27-2020",
   "mts_version": "3.15.0",
   "update_json": "https://api.github.com/repos/JohnnyBazooka89/StSModEnergizedSpire/releases/latest"
 }
