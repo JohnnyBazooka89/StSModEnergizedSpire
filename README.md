@@ -4,7 +4,7 @@ This is a content mod for Slay the Spire that adds a lot of new **Energy relics*
  
 Every single relic added by this mod adds 1 Energy at the start of your turn and has a negative effect similar to how base game Energy relics work.
 
-Currently there are 17 new relics developed: 2 for each base character, and 9 relics for all characters. More relics will be added continually. 
+Currently there are 18 new relics developed: 2 for each base character, and 10 relics for all characters. More relics will be added continually. 
 
 ## Installation ##
 1. Subscribe to the mod on [mod's workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=1639939942).
