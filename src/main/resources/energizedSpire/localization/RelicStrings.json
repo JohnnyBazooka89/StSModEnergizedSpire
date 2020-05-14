@@ -144,5 +144,12 @@
     "DESCRIPTIONS": [
       "The first time you #yScry each turn, gain [E] [REMOVE_SPACE]."
     ]
+  },
+  "energizedSpire:NeverEndingSparkler": {
+    "NAME": "Never-Ending Sparkler",
+    "FLAVOR": "It sparks joy.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. #b50% of Normal and Elite rooms are #rBurning rooms."
+    ]
   }
 }

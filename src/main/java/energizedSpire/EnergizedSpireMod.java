@@ -102,6 +102,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.addRelic(new EnergizedDie(), RelicType.SHARED);
         BaseMod.addRelic(new MagnifyingGlass(), RelicType.SHARED);
         BaseMod.addRelic(new StickyHand(), RelicType.SHARED);
+        BaseMod.addRelic(new NeverEndingSparkler(), RelicType.SHARED);
 
         logger.info("Done editing relics");
     }
