@@ -4,13 +4,20 @@
     "NAMES": [
       "reception problems"
     ],
-    "DESCRIPTION": "Reception Problems is an unplayable status card that when drawn makes you lose 2 Focus until the beginning of your next turn."
+    "DESCRIPTION": "Reception Problems is an Unplayable Status card that when drawn makes you lose #b2 #yFocus until the beginning of your next turn."
   },
   "energizedSpire:DepressionKeyword": {
     "PROPER_NAME": "Depression",
     "NAMES": [
       "depression"
     ],
-    "DESCRIPTION": "In this #yStance, you draw 1 fewer card each turn."
+    "DESCRIPTION": "In this #yStance, you draw #b1 fewer card each turn."
+  },
+  "energizedSpire:BurningRoomsKeyword": {
+    "PROPER_NAME": "Burning Rooms",
+    "NAMES": [
+      "burning rooms"
+    ],
+    "DESCRIPTION": "Enemies are empowered and drop the Emerald Key."
   }
 }

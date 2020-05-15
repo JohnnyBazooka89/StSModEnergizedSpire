@@ -18,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Map;
 
 @SpireInitializer
@@ -39,6 +40,10 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     private static final String KEYWORD_STRINGS_PATH = "energizedSpire/localization/KeywordStrings.json";
     private static final String POWER_STRINGS_PATH = "energizedSpire/localization/PowerStrings.json";
     private static final String STANCE_STRINGS_PATH = "energizedSpire/localization/StanceStrings.json";
+
+    //Keywords
+    public static Map<String, Keyword> keywords = new HashMap<>();
+    public static final String BURNING_ROOMS_KEYWORD_ID = "energizedSpire:BurningRoomsKeyword";
 
     public EnergizedSpireMod() {
         BaseMod.subscribe(this);
@@ -139,7 +144,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         Type typeToken = new TypeToken<Map<String, Keyword>>() {
         }.getType();
 
-        Map<String, Keyword> keywords = gson.fromJson(keywordStrings, typeToken);
+        keywords = gson.fromJson(keywordStrings, typeToken);
 
         keywords.forEach((k, v) -> BaseMod.addKeyword("energizedSpire:".toLowerCase(), v.PROPER_NAME, v.NAMES, v.DESCRIPTION));
     }
