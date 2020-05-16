@@ -21,7 +21,7 @@
     "FLAVOR": "Too old to use, too good to throw away.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, shuffle #b",
-      " #renergizedspire:Reception Problems into your draw pile."
+      " #rReception #rProblems into your draw pile."
     ]
   },
   "energizedSpire:DeadBattery": {
@@ -135,7 +135,7 @@
     "NAME": "Black Cloud",
     "FLAVOR": "There is always sunshine above the black clouds.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Start each combat in #yenergizedspire:Depression."
+      "Gain [E] at the start of your turn. Start each combat in energizedspire:Depression."
     ]
   },
   "energizedSpire:CrystalSphere": {

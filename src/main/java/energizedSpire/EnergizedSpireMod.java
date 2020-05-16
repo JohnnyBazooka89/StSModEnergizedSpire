@@ -43,6 +43,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
 
     //Keywords
     public static Map<String, Keyword> keywords = new HashMap<>();
+    public static final String RECEPTION_PROBLEMS_KEYWORD_ID = "energizedSpire:ReceptionProblemsKeyword";
     public static final String BURNING_ROOMS_KEYWORD_ID = "energizedSpire:BurningRoomsKeyword";
 
     public EnergizedSpireMod() {

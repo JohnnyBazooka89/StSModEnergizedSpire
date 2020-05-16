@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import energizedSpire.EnergizedSpireMod;
+import energizedSpire.Keyword;
 import energizedSpire.cards.ReceptionProblems;
 
 public class OldTV extends CustomRelic {
@@ -19,6 +21,7 @@ public class OldTV extends CustomRelic {
 
     public OldTV() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        refreshTips();
     }
 
     @Override
@@ -42,4 +45,13 @@ public class OldTV extends CustomRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + AMOUNT_OF_RECEPTION_PROBLEMS_TO_SHUFFLE + DESCRIPTIONS[1];
     }
+
+    public void refreshTips() {
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
+        Keyword burningRoomsKeyword = EnergizedSpireMod.keywords.get(EnergizedSpireMod.RECEPTION_PROBLEMS_KEYWORD_ID);
+        this.tips.add(new PowerTip(burningRoomsKeyword.PROPER_NAME, burningRoomsKeyword.DESCRIPTION));
+    }
+
 }
