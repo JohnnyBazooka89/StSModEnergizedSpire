@@ -30,7 +30,7 @@ public class NeverEndingSparklerPatches {
         public static Boolean assignIfNullAndGetValue(MapRoomNode mapRoomNode) {
             if (hasEmeraldKeySpireField.get(mapRoomNode) == null) {
                 if (mapRoomNode.getRoom() instanceof MonsterRoom || mapRoomNode.getRoom() instanceof MonsterRoomElite) {
-                    hasEmeraldKeySpireField.set(mapRoomNode, AbstractDungeon.cardRandomRng.randomBoolean());
+                    hasEmeraldKeySpireField.set(mapRoomNode, NeverEndingSparklerRngPatches.rng.randomBoolean());
                 } else {
                     hasEmeraldKeySpireField.set(mapRoomNode, false);
                 }
@@ -41,7 +41,7 @@ public class NeverEndingSparklerPatches {
 
     @SpirePatch(clz = MapRoomNode.class, method = SpirePatch.CLASS)
     public static class HasEmeraldKeyPatch {
-        public static SpireField<Boolean> hasEmeraldKeySpireField = new SpireField<Boolean>(() -> null);
+        public static SpireField<Boolean> hasEmeraldKeySpireField = new SpireField<>(() -> null);
     }
 
     @SpirePatch(clz = MapRoomNode.class, method = "updateEmerald")
