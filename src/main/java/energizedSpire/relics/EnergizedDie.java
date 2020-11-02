@@ -2,6 +2,7 @@ package energizedSpire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.relics.BeforeRenderIntentRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,7 +20,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import energizedSpire.EnergizedSpireMod;
 import energizedSpire.enums.EnergizedDieEffect;
 
-public class EnergizedDie extends CustomRelic {
+public class EnergizedDie extends CustomRelic implements BeforeRenderIntentRelic {
 
     public static final String ID = "energizedSpire:EnergizedDie";
     public static final String IMG_ID_CURSED_KEY = "EnergizedDieCursedKey";
@@ -77,7 +78,7 @@ public class EnergizedDie extends CustomRelic {
     @Override
     public void onChestOpen(boolean bossChest) {
         if (isCurrentEffectEqualTo(EnergizedDieEffect.CURSED_KEY) && !bossChest) {
-            AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnRandomCurse(), Settings.WIDTH / 2, Settings.HEIGHT / 2));
+            AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnRandomCurse(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
     }
@@ -215,5 +216,10 @@ public class EnergizedDie extends CustomRelic {
 
     public boolean isCurrentEffectEqualTo(EnergizedDieEffect effect) {
         return currentEffect == effect;
+    }
+
+    @Override
+    public boolean beforeRenderIntent(AbstractMonster abstractMonster) {
+        return !this.isCurrentEffectEqualTo(EnergizedDieEffect.RUNIC_DOME);
     }
 }

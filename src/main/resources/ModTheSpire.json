@@ -7,9 +7,9 @@
   "description": "This mod adds a lot of new Energy relics to the boss relic pool!\n\nMore info: https://steamcommunity.com/sharedfiles/filedetails/?id=1639939942\n\nGitHub: https://github.com/JohnnyBazooka89/StSModEnergizedSpire",
   "version": "${project.version}",
   "dependencies": [
-    "basemod"
+    "basemod", "stslib"
   ],
-  "sts_version": "01-27-2020",
-  "mts_version": "3.15.0",
+  "sts_version": "07-30-2020",
+  "mts_version": "3.17.0",
   "update_json": "https://api.github.com/repos/JohnnyBazooka89/StSModEnergizedSpire/releases/latest"
 }
