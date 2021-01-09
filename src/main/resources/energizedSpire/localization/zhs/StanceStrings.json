@@ -1,0 +1,8 @@
+{
+  "energizedSpire:DepressionStance": {
+    "NAME": "抑郁",
+    "DESCRIPTION": [
+      "你每回合少抽1张牌。"
+    ]
+  }
+}

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import energizedSpire.cards.ReceptionProblems;
@@ -35,11 +36,15 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     private static final String BADGE_IMG = "energizedSpire/img/ModBadge.png";
 
     //Localization strings
-    private static final String RELIC_STRINGS_PATH = "energizedSpire/localization/RelicStrings.json";
-    private static final String CARD_STRINGS_PATH = "energizedSpire/localization/CardStrings.json";
-    private static final String KEYWORD_STRINGS_PATH = "energizedSpire/localization/KeywordStrings.json";
-    private static final String POWER_STRINGS_PATH = "energizedSpire/localization/PowerStrings.json";
-    private static final String STANCE_STRINGS_PATH = "energizedSpire/localization/StanceStrings.json";
+    private static final String RELIC_STRINGS_PATH = "energizedSpire/localization/%s/RelicStrings.json";
+    private static final String CARD_STRINGS_PATH = "energizedSpire/localization/%s/CardStrings.json";
+    private static final String KEYWORD_STRINGS_PATH = "energizedSpire/localization/%s/KeywordStrings.json";
+    private static final String POWER_STRINGS_PATH = "energizedSpire/localization/%s/PowerStrings.json";
+    private static final String STANCE_STRINGS_PATH = "energizedSpire/localization/%s/StanceStrings.json";
+
+    //Languages
+    private static final String DEFAULT_LANGUAGE_FOLDER = "eng";
+    private static final String SIMPLIFIED_CHINESE_LANGUAGE_FOLDER = "zhs";
 
     //Keywords
     public static Map<String, Keyword> keywords = new HashMap<>();
@@ -123,25 +128,55 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     public void receiveEditStrings() {
         logger.info("Begin editing strings");
 
-        //Relic Strings
-        BaseMod.loadCustomStringsFile(RelicStrings.class, RELIC_STRINGS_PATH);
-        //Card Strings
-        BaseMod.loadCustomStringsFile(CardStrings.class, CARD_STRINGS_PATH);
-        //Keyword Strings
-        BaseMod.loadCustomStringsFile(KeywordStrings.class, KEYWORD_STRINGS_PATH);
-        //Power Strings
-        BaseMod.loadCustomStringsFile(PowerStrings.class, POWER_STRINGS_PATH);
-        //Stance Strings
-        BaseMod.loadCustomStringsFile(StanceStrings.class, STANCE_STRINGS_PATH);
+        loadCustomStringsForLanguage(DEFAULT_LANGUAGE_FOLDER);
+
+        switch (Settings.language) {
+            case ZHS:
+                loadCustomStringsForLanguage(SIMPLIFIED_CHINESE_LANGUAGE_FOLDER);
+                break;
+            default:
+                //Nothing - default language was already loaded
+                break;
+        }
 
         logger.info("Done editing strings");
     }
 
+    private void loadCustomStringsForLanguage(String languageFolder) {
+        //Relic Strings
+        BaseMod.loadCustomStringsFile(RelicStrings.class, String.format(RELIC_STRINGS_PATH, languageFolder));
+        //Card Strings
+        BaseMod.loadCustomStringsFile(CardStrings.class, String.format(CARD_STRINGS_PATH, languageFolder));
+        //Keyword Strings
+        BaseMod.loadCustomStringsFile(KeywordStrings.class, String.format(KEYWORD_STRINGS_PATH, languageFolder));
+        //Power Strings
+        BaseMod.loadCustomStringsFile(PowerStrings.class, String.format(POWER_STRINGS_PATH, languageFolder));
+        //Stance Strings
+        BaseMod.loadCustomStringsFile(StanceStrings.class, String.format(STANCE_STRINGS_PATH, languageFolder));
+    }
+
     @Override
     public void receiveEditKeywords() {
+        logger.info("Begin editing keywords");
+
+        loadCustomKeywordsForLanguage(DEFAULT_LANGUAGE_FOLDER);
+
+        switch (Settings.language) {
+            case ZHS:
+                loadCustomKeywordsForLanguage(SIMPLIFIED_CHINESE_LANGUAGE_FOLDER);
+                break;
+            default:
+                //Nothing - default language was already loaded
+                break;
+        }
+
+        logger.info("Done editing keywords");
+    }
+
+    private void loadCustomKeywordsForLanguage(String languageFolder) {
         Gson gson = new Gson();
 
-        String keywordStrings = Gdx.files.internal(KEYWORD_STRINGS_PATH).readString(String.valueOf(StandardCharsets.UTF_8));
+        String keywordStrings = Gdx.files.internal(String.format(KEYWORD_STRINGS_PATH, languageFolder)).readString(String.valueOf(StandardCharsets.UTF_8));
         Type typeToken = new TypeToken<Map<String, Keyword>>() {
         }.getType();
 

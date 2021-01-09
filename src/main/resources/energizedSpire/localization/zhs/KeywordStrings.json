@@ -1,0 +1,23 @@
+{
+  "energizedSpire:ReceptionProblemsKeyword": {
+    "PROPER_NAME": "接收问题",
+    "NAMES": [
+      "接收问题"
+    ],
+    "DESCRIPTION": "接收问题是一张 #y不能打出 的 #y状态牌 ，抽到时使你失去 #b2 点 #y集中 ，直到你的下个回合开始。"
+  },
+  "energizedSpire:DepressionKeyword": {
+    "PROPER_NAME": "抑郁",
+    "NAMES": [
+      "抑郁"
+    ],
+    "DESCRIPTION": "在这一 #y姿态 中，你每回合少抽 #b1 张牌。"
+  },
+  "energizedSpire:BurningRoomsKeyword": {
+    "PROPER_NAME": "燃烧房",
+    "NAMES": [
+      "燃烧房"
+    ],
+    "DESCRIPTION": "敌人得到加强并会掉落 #y绿宝石钥匙 。"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "energizedSpire:RegainFocusPower": {
+    "NAME": "重获集中",
+    "DESCRIPTIONS": [
+      "在你的下个回合开始时，重新获得 #b",
+      " 点 #y集中 。"
+    ]
+  }
+}
