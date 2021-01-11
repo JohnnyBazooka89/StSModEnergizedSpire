@@ -1,11 +1,4 @@
 {
-  "energizedSpire:ReceptionProblemsKeyword": {
-    "PROPER_NAME": "接收问题",
-    "NAMES": [
-      "接收问题"
-    ],
-    "DESCRIPTION": "接收问题是一张 #y不能打出 的 #y状态牌 ，抽到时使你失去 #b2 点 #y集中 ，直到你的下个回合开始。"
-  },
   "energizedSpire:DepressionKeyword": {
     "PROPER_NAME": "抑郁",
     "NAMES": [

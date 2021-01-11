@@ -1,6 +1,7 @@
 package energizedSpire.relics;
 
 import basemod.abstracts.CustomRelic;
+import basemod.helpers.CardPowerTip;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import energizedSpire.EnergizedSpireMod;
-import energizedSpire.Keyword;
 import energizedSpire.cards.ReceptionProblems;
 
 public class OldTV extends CustomRelic {
@@ -50,8 +50,7 @@ public class OldTV extends CustomRelic {
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
-        Keyword burningRoomsKeyword = EnergizedSpireMod.keywords.get(EnergizedSpireMod.RECEPTION_PROBLEMS_KEYWORD_ID);
-        this.tips.add(new PowerTip(burningRoomsKeyword.PROPER_NAME, burningRoomsKeyword.DESCRIPTION));
+        this.tips.add(new CardPowerTip(new ReceptionProblems()));
     }
 
 }

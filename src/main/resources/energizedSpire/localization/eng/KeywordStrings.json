@@ -1,11 +1,4 @@
 {
-  "energizedSpire:ReceptionProblemsKeyword": {
-    "PROPER_NAME": "Reception Problems",
-    "NAMES": [
-      "reception problems"
-    ],
-    "DESCRIPTION": "Reception Problems is an Unplayable Status card that when drawn makes you lose #b2 #yFocus until the beginning of your next turn."
-  },
   "energizedSpire:DepressionKeyword": {
     "PROPER_NAME": "Depression",
     "NAMES": [

@@ -22,6 +22,7 @@ public class ReceptionProblems extends CustomCard {
 
     public ReceptionProblems() {
         super(ID, NAME, EnergizedSpireMod.getCardImagePath(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, AbstractCard.CardTarget.NONE);
+        this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
