@@ -3,6 +3,7 @@ package energizedSpire.patches;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -14,6 +15,8 @@ import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 import energizedSpire.actions.UnstableMoleculesDecreaseValueInOrbAction;
 import energizedSpire.relics.UnstableMolecules;
+
+import static energizedSpire.patches.UnstableMoleculesBlockReminderInteraction.BLOCK_REMINDER_MOD_ID;
 
 public class UnstableMoleculesPatches {
 
@@ -37,7 +40,7 @@ public class UnstableMoleculesPatches {
             if (AbstractDungeon.player.hasRelic(UnstableMolecules.ID)) {
                 Integer value = UnstableMoleculesFieldPatch.value.get(orb);
                 if (value != null) {
-                    BobEffect bobEffect = (BobEffect) ReflectionHacks.getPrivate(orb, AbstractOrb.class, "bobEffect");
+                    BobEffect bobEffect = ReflectionHacks.getPrivate(orb, AbstractOrb.class, "bobEffect");
                     FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, value.toString(), orb.cX,
                             orb.cY + (bobEffect.y / 2.0F) + 20.0F * Settings.scale, Color.RED, 0.5f);
                 }
@@ -48,6 +51,11 @@ public class UnstableMoleculesPatches {
     @SpirePatch(clz = Frost.class, method = "onEndOfTurn")
     public static class TriggerPassiveAbilityPatch {
         public static void Postfix(Frost orb) {
+            if (Loader.isModLoaded(BLOCK_REMINDER_MOD_ID)) {
+                if (UnstableMoleculesBlockReminderInteraction.isPreview()) {
+                    return;
+                }
+            }
             if (AbstractDungeon.player.hasRelic(UnstableMolecules.ID)) {
                 AbstractDungeon.actionManager.addToBottom(new UnstableMoleculesDecreaseValueInOrbAction(orb));
             }
@@ -57,6 +65,11 @@ public class UnstableMoleculesPatches {
     @SpirePatch(clz = Frost.class, method = "onEndOfTurn")
     public static class PreventPassiveAbilityAtZeroValuePatch {
         public static SpireReturn<Void> Prefix(Frost orb) {
+            if (Loader.isModLoaded(BLOCK_REMINDER_MOD_ID)) {
+                if (UnstableMoleculesBlockReminderInteraction.isPreview()) {
+                    return SpireReturn.Continue();
+                }
+            }
             if (AbstractDungeon.player.hasRelic(UnstableMolecules.ID)) {
                 Integer value = UnstableMoleculesFieldPatch.value.get(orb);
                 if (value != null && value == 0) {
