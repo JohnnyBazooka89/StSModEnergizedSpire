@@ -51,10 +51,8 @@ public class UnstableMoleculesPatches {
     @SpirePatch(clz = Frost.class, method = "onEndOfTurn")
     public static class TriggerPassiveAbilityPatch {
         public static void Postfix(Frost orb) {
-            if (Loader.isModLoaded(BLOCK_REMINDER_MOD_ID)) {
-                if (UnstableMoleculesBlockReminderInteraction.isPreview()) {
-                    return;
-                }
+            if (Loader.isModLoaded(BLOCK_REMINDER_MOD_ID) && UnstableMoleculesBlockReminderInteraction.isPreview()) {
+                return;
             }
             if (AbstractDungeon.player.hasRelic(UnstableMolecules.ID)) {
                 AbstractDungeon.actionManager.addToBottom(new UnstableMoleculesDecreaseValueInOrbAction(orb));
@@ -65,10 +63,8 @@ public class UnstableMoleculesPatches {
     @SpirePatch(clz = Frost.class, method = "onEndOfTurn")
     public static class PreventPassiveAbilityAtZeroValuePatch {
         public static SpireReturn<Void> Prefix(Frost orb) {
-            if (Loader.isModLoaded(BLOCK_REMINDER_MOD_ID)) {
-                if (UnstableMoleculesBlockReminderInteraction.isPreview()) {
-                    return SpireReturn.Continue();
-                }
+            if (Loader.isModLoaded(BLOCK_REMINDER_MOD_ID) && UnstableMoleculesBlockReminderInteraction.isPreview()) {
+                return SpireReturn.Continue();
             }
             if (AbstractDungeon.player.hasRelic(UnstableMolecules.ID)) {
                 Integer value = UnstableMoleculesFieldPatch.value.get(orb);
