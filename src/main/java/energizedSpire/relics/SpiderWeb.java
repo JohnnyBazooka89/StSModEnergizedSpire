@@ -30,7 +30,7 @@ public class SpiderWeb extends CustomRelic {
     }
 
     @Override
-    public void atBattleStart() {
+    public void atPreBattle() {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         EntanglePower entanglePower = new EntanglePower(AbstractDungeon.player);
