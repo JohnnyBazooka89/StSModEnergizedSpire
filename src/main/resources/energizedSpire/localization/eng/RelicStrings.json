@@ -1,18 +1,16 @@
 {
-  "energizedSpire:DecayingSkull": {
-    "NAME": "Decaying Skull",
+  "energizedSpire:RottingSkull": {
+    "NAME": "Rotting Skull",
     "FLAVOR": "Find the other one too! Is this the beginning of a new collection?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the end of your turn, if your HP is above #b50%, take #b",
-      " damage."
+      "If your HP is at or below #b50%, gain [E] at the start of your turn."
     ]
   },
   "energizedSpire:HighHeels": {
     "NAME": "High Heels",
     "FLAVOR": "Elegant, but not very comfortable for the combat.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Upon pickup, obtain #b",
-      " #rClumsy. At the start of combat, lose #b",
+      "Gain [E] at the start of your turn. At the start of combat, lose #b",
       " #yDexterity."
     ]
   },
@@ -111,7 +109,7 @@
     "NAME": "Tabasco Sauce",
     "FLAVOR": "Ah, that's hot! That is hot!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Reduce increasing max HP and in-combat healing effects by #b",
+      "Gain [E] at the start of your turn. Increasing max HP and in-combat healing effects are reduced by #b",
       "%."
     ]
   },

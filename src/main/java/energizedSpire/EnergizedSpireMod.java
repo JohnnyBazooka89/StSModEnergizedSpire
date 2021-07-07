@@ -96,7 +96,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         logger.info("Begin editing relics");
 
         // Add relics
-        BaseMod.addRelic(new DecayingSkull(), RelicType.RED);
+        BaseMod.addRelic(new RottingSkull(), RelicType.RED);
         BaseMod.addRelic(new HighHeels(), RelicType.GREEN);
         BaseMod.addRelic(new OldTV(), RelicType.BLUE);
         BaseMod.addRelic(new BlackCloud(), RelicType.PURPLE);

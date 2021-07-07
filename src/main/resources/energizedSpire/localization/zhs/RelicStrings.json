@@ -1,18 +1,16 @@
 {
-  "energizedSpire:DecayingSkull": {
-    "NAME": "腐蚀性头骨",
+  "energizedSpire:RottingSkull": {
+    "NAME": "腐烂的头骨",
     "FLAVOR": "找到另一个了！这是新收藏的开始吧？",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 [E] 。回合结束时，如果你的生命值高于 #b50% ，受到 #b",
-      " 点伤害。"
+      "当你的生命值等于或低于 #b50% 时，在每回合开始时获得 [E] 。"
     ]
   },
   "energizedSpire:HighHeels": {
     "NAME": "高跟鞋",
     "FLAVOR": "优雅，但是战斗中不是很舒服。",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 [E] 。拾起时，获得 #b",
-      " 张 #r笨拙 。在每场战斗开始时，失去 #b",
+      "在每回合开始时获得 [E] 。在每场战斗开始时，失去 #b",
       " 点 #y敏捷 。"
     ]
   },
