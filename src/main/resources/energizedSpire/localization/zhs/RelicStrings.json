@@ -1,6 +1,6 @@
 {
   "energizedSpire:RottingSkull": {
-    "NAME": "腐烂的头骨",
+    "NAME": "腐烂头骨",
     "FLAVOR": "找到另一个了！这是新收藏的开始吧？",
     "DESCRIPTIONS": [
       "当你的生命值等于或低于 #b50% 时，在每回合开始时获得 [E] 。"
