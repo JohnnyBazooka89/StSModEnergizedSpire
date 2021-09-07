@@ -73,7 +73,7 @@
     "NAME": "Ogre Head",
     "FLAVOR": "Me smash you! Wait... who?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Whenever you play a card that target an enemy, you have #b50% chance to target another enemy."
+      "Gain [E] at the start of your turn. Whenever you play a card that targets an enemy, you have #b50% chance to target another enemy."
     ]
   },
   "energizedSpire:EnergizedDie": {
