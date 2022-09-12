@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.EntanglePower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import energizedSpire.EnergizedSpireMod;
 
 public class SpiderWeb extends CustomRelic {
@@ -19,8 +18,8 @@ public class SpiderWeb extends CustomRelic {
     public static final Texture IMG = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(ID));
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
 
-    public static final int ENTANGLED_TURNS = 2;
-    public static final int STRENGTH_TO_GAIN = 3;
+    public static final int ENTANGLED_TO_GAIN = 1;
+    public static final int TURNS = 6;
 
     private static final PowerStrings ENTANGLED_POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(EntanglePower.POWER_ID);
 
@@ -29,18 +28,23 @@ public class SpiderWeb extends CustomRelic {
         refreshTips();
     }
 
-    @Override
-    public void atPreBattle() {
-        this.flash();
-        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        EntanglePower entanglePower = new EntanglePower(AbstractDungeon.player);
-        entanglePower.amount = ENTANGLED_TURNS;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, entanglePower));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, STRENGTH_TO_GAIN)));
+    public void atTurnStart() {
+        if (this.counter == -1) {
+            this.counter += 2;
+        } else {
+            this.counter++;
+        }
+        if (this.counter == TURNS) {
+            this.counter = 0;
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, null, new EntanglePower(AbstractDungeon.player), 1));
+        }
     }
 
     @Override
     public void onEquip() {
+        this.counter = 0;
         ++AbstractDungeon.player.energy.energyMaster;
     }
 
@@ -51,7 +55,7 @@ public class SpiderWeb extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + ENTANGLED_TURNS + DESCRIPTIONS[1] + STRENGTH_TO_GAIN + DESCRIPTIONS[2];
+        return DESCRIPTIONS[0] + TURNS + DESCRIPTIONS[1] + ENTANGLED_TO_GAIN + DESCRIPTIONS[2];
     }
 
     public void refreshTips() {
