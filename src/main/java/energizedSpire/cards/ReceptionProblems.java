@@ -17,12 +17,12 @@ public class ReceptionProblems extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = -2;
+    private static final int COST = 1;
     private static final int FOCUS_TO_LOSE_AND_REGAIN = 2;
 
     public ReceptionProblems() {
         super(ID, NAME, EnergizedSpireMod.getCardImagePath(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, AbstractCard.CardTarget.NONE);
-        this.isEthereal = true;
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

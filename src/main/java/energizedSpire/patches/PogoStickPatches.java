@@ -21,7 +21,7 @@ public class PogoStickPatches {
                 public void edit(NewExpr newExpr) throws CannotCompileException {
                     if (newExpr.getClassName().equals(DrawCardAction.class.getName())) {
                         newExpr.replace(
-                                "$_ = $proceed($1, $2 - (" + PogoStickPatches.class.getName() + ".getAmountOfCardsToDrawFewer()), $3);"
+                                "$_ = $proceed($1, $2 - (" + PogoStickPatches.class.getName() + ".getNumberOfCardsToDrawFewer()), $3);"
                         );
                     }
                 }
@@ -39,7 +39,7 @@ public class PogoStickPatches {
                     if (newExpr.getClassName().equals(DrawCardAction.class.getName())) {
                         if (counter[0] == 0) {
                             newExpr.replace(
-                                    "$_ = $proceed($1, $2 - (" + PogoStickPatches.class.getName() + ".getAmountOfCardsToDrawFewer()));"
+                                    "$_ = $proceed($1, $2 - (" + PogoStickPatches.class.getName() + ".getNumberOfCardsToDrawFewer()));"
                             );
                         }
                         counter[0]++;
@@ -49,7 +49,7 @@ public class PogoStickPatches {
         }
     }
 
-    public static int getAmountOfCardsToDrawFewer() {
+    public static int getNumberOfCardsToDrawFewer() {
         int counter = 0;
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
             if (relic instanceof PogoStick) {
