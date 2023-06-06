@@ -3,7 +3,7 @@
     "NAME": "Rotting Skull",
     "FLAVOR": "Find the other one too! Is this the beginning of a new collection?",
     "DESCRIPTIONS": [
-      "If your HP is at or below #b50%, gain [E] and draw 1 additional card at the start of your turn."
+      "If your HP is at or below #b50%, gain [E] and draw #b1 additional card at the start of your turn."
     ]
   },
   "energizedSpire:HighHeels": {
