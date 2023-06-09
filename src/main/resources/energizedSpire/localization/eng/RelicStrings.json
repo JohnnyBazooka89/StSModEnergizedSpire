@@ -94,7 +94,7 @@
     "NAME": "Magnifying Glass",
     "FLAVOR": "The bigger they are, the harder they fall.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Enemies in combats have #b",
+      "Gain [E] at the start of your turn. Enemies have #b",
       "% more HP."
     ]
   },

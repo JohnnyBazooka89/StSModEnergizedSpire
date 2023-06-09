@@ -94,8 +94,8 @@
     "NAME": "放大镜",
     "FLAVOR": "大者难倒。",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 [E] 。战斗中的敌人生命值增加 #b",
-      "% 。"
+      "在每回合开始时获得 [E] 。敌人拥有 #b",
+      "% 额外生命。"
     ]
   },
   "energizedSpire:StickyHand": {
