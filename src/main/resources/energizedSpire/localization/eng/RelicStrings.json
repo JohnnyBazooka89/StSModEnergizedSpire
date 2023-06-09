@@ -109,7 +109,7 @@
     "NAME": "Tabasco Sauce",
     "FLAVOR": "Ah, that's hot! That is hot!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Increasing max HP and in-combat healing effects are reduced by #b",
+      "Gain [E] at the start of your turn. In-combat healing effects are reduced by #b",
       "%."
     ]
   },

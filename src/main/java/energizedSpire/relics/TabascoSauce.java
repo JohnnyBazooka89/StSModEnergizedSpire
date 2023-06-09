@@ -2,8 +2,10 @@ package energizedSpire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import energizedSpire.EnergizedSpireMod;
 
 public class TabascoSauce extends CustomRelic {
@@ -26,6 +28,14 @@ public class TabascoSauce extends CustomRelic {
     @Override
     public void onUnequip() {
         --AbstractDungeon.player.energy.energyMaster;
+    }
+
+    public int onPlayerHeal(int healAmount) {
+        if (AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+            flash();
+            return MathUtils.round(healAmount * 0.5F);
+        }
+        return healAmount;
     }
 
     @Override
