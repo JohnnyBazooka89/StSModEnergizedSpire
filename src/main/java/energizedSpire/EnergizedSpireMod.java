@@ -1,7 +1,6 @@
 package energizedSpire;
 
 import basemod.BaseMod;
-import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -87,8 +86,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     public void receivePostInitialize() {
         // Mod badge
         Texture badgeTexture = ImageMaster.loadImage(BADGE_IMG);
-        ModPanel settingsPanel = new ModPanel();
-        BaseMod.registerModBadge(badgeTexture, MOD_NAME, AUTHOR, DESCRIPTION, settingsPanel);
+        BaseMod.registerModBadge(badgeTexture, MOD_NAME, AUTHOR, DESCRIPTION, null);
     }
 
     @Override
