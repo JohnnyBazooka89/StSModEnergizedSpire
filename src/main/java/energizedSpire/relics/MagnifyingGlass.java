@@ -14,7 +14,7 @@ public class MagnifyingGlass extends CustomRelic {
     public static final Texture IMG = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(ID));
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
 
-    public static final int MORE_HP_PERCENT = 25;
+    public static final int MORE_HP_PERCENT = 20;
 
     public MagnifyingGlass() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
