@@ -38,7 +38,7 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Every #b",
       " turns, gain #b",
-      " #yEntangled."
+      " #yEntangled and add a random #yPower card into your hand."
     ]
   },
   "energizedSpire:CursedPentagram": {

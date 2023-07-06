@@ -3,7 +3,9 @@ package energizedSpire.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -39,6 +41,7 @@ public class SpiderWeb extends CustomRelic {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, null, new EntanglePower(AbstractDungeon.player), 1));
+            addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.POWER).makeCopy(), false));
         }
     }
 

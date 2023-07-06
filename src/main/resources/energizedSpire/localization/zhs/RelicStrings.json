@@ -38,7 +38,7 @@
     "DESCRIPTIONS": [
       "在每回合开始时获得 [E] 。每 #b",
       " 回合，获得 #b",
-      " 层 #y缠身 。"
+      " 层 #y缠身和增加一张随机 #y能力牌 到你的手牌。"
     ]
   },
   "energizedSpire:CursedPentagram": {
