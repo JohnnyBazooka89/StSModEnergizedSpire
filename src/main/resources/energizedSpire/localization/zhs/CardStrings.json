@@ -2,5 +2,9 @@
   "energizedSpire:ReceptionProblems": {
     "NAME": "接收问题",
     "DESCRIPTION": "抽到时使你失去2点 集中 ，直到你的下个回合开始。 NL 消耗 。"
+  },
+  "energizedSpire:CaughtInTheWeb": {
+    "NAME": "陷入网络",
+    "DESCRIPTION": "不能被打出 。 NL 虚无 。 NL 当这张卡在手牌时，你不能进行攻击。"
   }
 }

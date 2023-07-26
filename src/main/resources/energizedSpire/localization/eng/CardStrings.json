@@ -2,5 +2,9 @@
   "energizedSpire:ReceptionProblems": {
     "NAME": "Reception Problems",
     "DESCRIPTION": "Exhaust. NL Whenever this card is drawn, lose 2 Focus until the start of your next turn."
+  },
+  "energizedSpire:CaughtInTheWeb": {
+    "NAME": "Caught in the Web",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL While this card is in your hand, you cannot play Attacks."
   }
 }

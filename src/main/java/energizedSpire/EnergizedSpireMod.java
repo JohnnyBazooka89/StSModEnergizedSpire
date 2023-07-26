@@ -11,6 +11,7 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import energizedSpire.cards.CaughtInTheWeb;
 import energizedSpire.cards.ReceptionProblems;
 import energizedSpire.relics.*;
 import org.apache.logging.log4j.LogManager;
@@ -120,6 +121,7 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new ReceptionProblems());
+        BaseMod.addCard(new CaughtInTheWeb());
     }
 
     @Override

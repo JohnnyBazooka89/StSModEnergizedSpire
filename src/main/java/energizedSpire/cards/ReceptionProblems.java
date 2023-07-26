@@ -21,7 +21,7 @@ public class ReceptionProblems extends CustomCard {
     private static final int FOCUS_TO_LOSE_AND_REGAIN = 2;
 
     public ReceptionProblems() {
-        super(ID, NAME, EnergizedSpireMod.getCardImagePath(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, AbstractCard.CardTarget.NONE);
+        super(ID, NAME, EnergizedSpireMod.getCardImagePath(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, AbstractCard.CardTarget.NONE);
         this.exhaust = true;
     }
 

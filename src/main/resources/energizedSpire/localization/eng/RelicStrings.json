@@ -37,8 +37,8 @@
     "FLAVOR": "Use it to catch your enemies, not to catch yourself...",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Every #b",
-      " turns, gain #b",
-      " #yEntangled and add a random #yPower card into your hand."
+      " turns, add #b",
+      " #rCaught #rin #rthe #rWeb into your hand."
     ]
   },
   "energizedSpire:CursedPentagram": {
