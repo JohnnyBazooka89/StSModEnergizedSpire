@@ -120,6 +120,6 @@ public class HugeHouse extends CustomRelic {
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
-        this.tips.removeIf(tip -> tip.header.equalsIgnoreCase("strike"));
+        this.tips.removeIf(tip -> tip.header.equalsIgnoreCase("strike") || tip.header.equalsIgnoreCase("打击"));
     }
 }
