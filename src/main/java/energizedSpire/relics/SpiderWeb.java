@@ -18,7 +18,7 @@ public class SpiderWeb extends CustomRelic {
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
 
     public static final int CARDS_TO_ADD = 1;
-    public static final int TURNS = 6;
+    public static final int TURNS = 7;
 
     public SpiderWeb() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
