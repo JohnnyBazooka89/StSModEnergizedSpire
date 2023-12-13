@@ -13,7 +13,7 @@ public class CaughtInTheWeb extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = -2;
+    private static final int COST = 2;
 
     public CaughtInTheWeb() {
         super(ID, NAME, EnergizedSpireMod.getCardImagePath(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
