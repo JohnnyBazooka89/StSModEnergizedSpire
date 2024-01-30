@@ -10,6 +10,11 @@ Currently there are 18 new relics developed: 2 for each base character, and 10 r
 1. Subscribe to the mod on [mod's workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=1639939942).
 2. The instruction how to play with mods can be found [here](https://steamcommunity.com/games/646570/announcements/detail/1714081669582224415).
 
+## Localizations ##
+This mod is available in:
+- English
+- Simplified Chinese, thanks to 旅渚
+
 ## Special Thanks ##
 1. Thanks to the [developers](https://www.megacrit.com/) of **SlayTheSpire** for making such a good game.
 2. Thanks to the creators of ModTheSpire and BaseMod for creating great tools for modding.
