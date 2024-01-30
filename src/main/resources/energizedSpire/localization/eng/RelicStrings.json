@@ -11,7 +11,8 @@
     "FLAVOR": "Elegant, but not very comfortable for the combat.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, lose #b",
-      " #yDexterity."
+      " #yDexterity and shuffle #b",
+      " #rClumsy into your draw pile."
     ]
   },
   "energizedSpire:OldTV": {

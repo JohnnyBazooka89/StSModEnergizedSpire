@@ -17,7 +17,7 @@ public class OldTV extends CustomRelic {
     public static final Texture IMG = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(ID));
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
 
-    public static final int AMOUNT_OF_RECEPTION_PROBLEMS_TO_SHUFFLE = 1;
+    public static final int NUMBER_OF_RECEPTION_PROBLEMS_TO_SHUFFLE = 1;
 
     public OldTV() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
@@ -28,7 +28,7 @@ public class OldTV extends CustomRelic {
     public void atBattleStart() {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new ReceptionProblems(), AMOUNT_OF_RECEPTION_PROBLEMS_TO_SHUFFLE, true, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new ReceptionProblems(), NUMBER_OF_RECEPTION_PROBLEMS_TO_SHUFFLE, true, true));
     }
 
     @Override
@@ -43,7 +43,7 @@ public class OldTV extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + AMOUNT_OF_RECEPTION_PROBLEMS_TO_SHUFFLE + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0] + NUMBER_OF_RECEPTION_PROBLEMS_TO_SHUFFLE + DESCRIPTIONS[1];
     }
 
     public void refreshTips() {
