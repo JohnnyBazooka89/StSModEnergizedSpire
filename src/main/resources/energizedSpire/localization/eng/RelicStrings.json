@@ -8,7 +8,7 @@
   },
   "energizedSpire:HighHeels": {
     "NAME": "High Heels",
-    "FLAVOR": "Elegant, but not very comfortable for the combat.",
+    "FLAVOR": "Elegant, but not very comfortable for combat.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, lose #b",
       " #yDexterity and shuffle #b",
@@ -101,7 +101,7 @@
   },
   "energizedSpire:StickyHand": {
     "NAME": "Sticky Hand",
-    "FLAVOR": "This relic is definitely going to come in handy.",
+    "FLAVOR": "Definitely going to come in handy.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Whenever you would take a card in a future card reward, you take ALL the offered cards instead."
     ]
