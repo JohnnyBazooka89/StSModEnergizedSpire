@@ -31,17 +31,17 @@ public class BlackCloudPatches {
     @SpirePatch(clz = AbstractRoom.class, method = "update")
     public static class AbstractRoomPatch {
         public static ExprEditor Instrument() {
-            final int[] counter = {0};
             return new ExprEditor() {
+                int counter = 0;
                 @Override
                 public void edit(NewExpr newExpr) throws CannotCompileException {
                     if (newExpr.getClassName().equals(DrawCardAction.class.getName())) {
-                        if (counter[0] == 0) {
+                        if (counter == 0) {
                             newExpr.replace(
                                     "$_ = $proceed($1, $2 - (" + BlackCloudPatches.class.getName() + ".getNumberOfCardsToDrawFewer()));"
                             );
                         }
-                        counter[0]++;
+                        counter++;
                     }
                 }
             };

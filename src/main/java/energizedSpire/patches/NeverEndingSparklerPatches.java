@@ -81,17 +81,17 @@ public class NeverEndingSparklerPatches {
     @SpirePatch(clz = MonsterRoomElite.class, method = "addEmeraldKey")
     public static class MonsterRoomEliteAddEmeraldKeyPatch {
         public static ExprEditor Instrument() {
-            final int[] counter = {0};
             return new ExprEditor() {
+                int counter = 0;
                 @Override
                 public void edit(FieldAccess fieldAccess) throws CannotCompileException {
                     if (fieldAccess.getFieldName().equals("hasEmeraldKey")) {
-                        if (counter[0] == 1) {
+                        if (counter == 1) {
                             fieldAccess.replace(
                                     "$_ = ($proceed() || " + NeverEndingSparklerPatches.class.getName() + ".hasEmeraldKeySpireField(" + AbstractDungeon.class.getName() + ".getCurrMapNode()));"
                             );
                         }
-                        counter[0]++;
+                        counter++;
                     }
                 }
             };

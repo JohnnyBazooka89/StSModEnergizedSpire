@@ -44,7 +44,7 @@ public class EnergizedDieDescriptionPatches {
 
         @SpireInsertPatch(locator = Locator.class)
         public static SpireReturn<Void> Insert(SingleRelicViewPopup singleRelicViewPopup, SpriteBatch sb) {
-            AbstractRelic relic = (AbstractRelic) ReflectionHacks.getPrivate(singleRelicViewPopup, SingleRelicViewPopup.class, "relic");
+            AbstractRelic relic = ReflectionHacks.getPrivate(singleRelicViewPopup, SingleRelicViewPopup.class, "relic");
             if (EnergizedDie.ID.equals(relic.relicId)) {
                 FontHelper.renderSmartText(sb, FontHelperPatch.smallerCardDescriptionFont, relic.description, Settings.WIDTH / 2.0F - 200.0F * Settings.scale, Settings.HEIGHT / 2.0F - 140.0F * Settings.scale -
                         FontHelper.getSmartHeight(FontHelperPatch.smallerCardDescriptionFont, relic.description, DESC_LINE_WIDTH, DESC_LINE_SPACING) / 2.0F, DESC_LINE_WIDTH, DESC_LINE_SPACING, Settings.CREAM_COLOR);
