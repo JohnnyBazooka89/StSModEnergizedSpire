@@ -1,10 +1,10 @@
 {
   "energizedSpire:ReceptionProblems": {
     "NAME": "Reception Problems",
-    "DESCRIPTION": "Exhaust. NL Whenever this card is drawn, lose 2 Focus until the start of your next turn."
+    "DESCRIPTION": "Whenever this card is drawn, lose 2 Focus until the start of your next turn. NL Exhaust."
   },
   "energizedSpire:CaughtInTheWeb": {
     "NAME": "Caught in the Web",
-    "DESCRIPTION": "Ethereal. NL While this card is in your hand, you cannot play Attacks."
+    "DESCRIPTION": "Ethereal. NL While this card is in your hand, you cannot play Attacks. NL Exhaust."
   }
 }
