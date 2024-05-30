@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -70,13 +71,14 @@ public class HugeHouse extends CustomRelic {
 
     private void transformARandomCard() {
         List<AbstractCard> transformableCards = new ArrayList<>();
-        for (AbstractCard c : AbstractDungeon.player.masterDeck.getPurgeableCards().group) {
+        List<AbstractCard> transformableCandidates = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).group;
+        for (AbstractCard c : transformableCandidates) {
             if (c.type != AbstractCard.CardType.CURSE && c.rarity != AbstractCard.CardRarity.CURSE && c.rarity != AbstractCard.CardRarity.BASIC) {
                 transformableCards.add(c);
             }
         }
         if (transformableCards.isEmpty()) {
-            for (AbstractCard c : AbstractDungeon.player.masterDeck.getPurgeableCards().group) {
+            for (AbstractCard c : transformableCandidates) {
                 if (c.rarity == AbstractCard.CardRarity.BASIC) {
                     transformableCards.add(c);
                 }
@@ -88,11 +90,9 @@ public class HugeHouse extends CustomRelic {
             AbstractDungeon.transformCard(cardToTransform, false, AbstractDungeon.miscRng);
             if (AbstractDungeon.transformedCard != null) {
                 float positionX = Settings.WIDTH * 0.6F;
-                AbstractGameEffect purgeCardEffect = new PurgeCardEffect(
-                        cardToTransform, positionX, Settings.HEIGHT / 2.0F);
+                AbstractGameEffect purgeCardEffect = new PurgeCardEffect(cardToTransform, positionX, Settings.HEIGHT / 2.0F);
                 cardToTransform.target_x = positionX;
-                AbstractDungeon.topLevelEffectsQueue.add(new AbstractGameEffectDelayedByAnotherOneEffect(new ShowCardAndObtainEffect(
-                        AbstractDungeon.getTransformedCard(), positionX, Settings.HEIGHT / 2.0F, false), purgeCardEffect));
+                AbstractDungeon.topLevelEffectsQueue.add(new AbstractGameEffectDelayedByAnotherOneEffect(new ShowCardAndObtainEffect(AbstractDungeon.getTransformedCard(), positionX, Settings.HEIGHT / 2.0F, false), purgeCardEffect));
             }
         }
     }
