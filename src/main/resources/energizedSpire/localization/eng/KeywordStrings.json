@@ -7,9 +7,9 @@
     "DESCRIPTION": "In this #yStance, you draw #b1 fewer card each turn."
   },
   "energizedSpire:BurningRoomsKeyword": {
-    "PROPER_NAME": "Burning Rooms",
+    "PROPER_NAME": "Burning\u00a0Rooms",
     "NAMES": [
-      "burning rooms"
+      "burning\u00a0rooms"
     ],
     "DESCRIPTION": "Enemies are empowered and drop the Emerald Key."
   }
