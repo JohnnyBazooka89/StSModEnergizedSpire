@@ -2,7 +2,7 @@
   "energizedSpire:DepressionStance": {
     "NAME": "抑郁",
     "DESCRIPTION": [
-      "你每回合少抽1张牌。"
+      "你的攻击造成 #b25% 较少的伤害，你从攻击中受到 #b50% 更多的伤害。"
     ]
   }
 }

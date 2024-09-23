@@ -2,6 +2,7 @@ package energizedSpire.stances;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,6 +20,22 @@ public class DepressionStance extends AbstractStance {
         this.ID = STANCE_ID;
         this.name = stanceString.NAME;
         this.updateDescription();
+    }
+
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        if (type == DamageInfo.DamageType.NORMAL) {
+            return damage * 0.75F;
+        }
+        return damage;
+    }
+
+    @Override
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        if (type == DamageInfo.DamageType.NORMAL) {
+            return damage * 1.50F;
+        }
+        return damage;
     }
 
     @Override

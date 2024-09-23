@@ -2,7 +2,7 @@
   "energizedSpire:DepressionStance": {
     "NAME": "Depression",
     "DESCRIPTION": [
-      "You draw 1 fewer card each turn."
+      "Your Attacks deal #b25% less damage and you take #b50% more damage from attacks."
     ]
   }
 }

@@ -10,9 +10,8 @@
     "NAME": "High Heels",
     "FLAVOR": "Elegant, but not very comfortable for combat.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of combat, lose #b",
-      " #yDexterity and shuffle #b",
-      " #rClumsy into your draw pile."
+      "Gain [E] at the start of your turn. At the start of combat, shuffle #b",
+      " #rClumsy Curses into your draw pile."
     ]
   },
   "energizedSpire:OldTV": {
@@ -81,14 +80,14 @@
     "NAME": "Energized Die",
     "FLAVOR": "Alea iacta est.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Whenever you climb a floor, Energized Die is rerolled to have the negative effect of 1 of 6 other energy relics: NL 1 - Cursed Key, 2 - Sozu, 3 - Ectoplasm, 4 - Runic Dome, 5 - Philosopher's Stone, 6 - Velvet Choker.",
+      "Gain [E] at the start of your turn. Whenever you climb a floor, Energized Die is rerolled to have the negative effect of 1 of 6 other energy relics: NL 1 - Cursed Key, 2 - Sozu, 3 - Ectoplasm, 4 - Runic Dome, 5 - Philosopher's Stone, 6 - Busted Crown.",
       "Current effect:",
       "1 - Cursed Key NL Whenever you open a non-Boss chest, obtain a #rCurse.",
       "2 - Sozu NL You can no longer obtain potions.",
       "3 - Ectoplasm NL You can no longer gain #yGold.",
       "4 - Runic Dome NL You can no longer see enemy intents.",
       "5 - Philosopher's Stone NL ALL enemies start combat with #b1 Strength.",
-      "6 - Velvet Choker NL You cannot play more than #b6 cards per turn."
+      "6 - Busted Crown NL Card rewards have #b2 less cards to choose from."
     ]
   },
   "energizedSpire:MagnifyingGlass": {
@@ -134,7 +133,7 @@
     "NAME": "Black Cloud",
     "FLAVOR": "There is always sunshine above the black clouds.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Start each combat in #yenergizedspire:Depression."
+      "Gain [E] at the start of your turn. Whenever you start your turn without being in any Stance, enter #yenergizedspire:Depression."
     ]
   },
   "energizedSpire:CrystalSphere": {

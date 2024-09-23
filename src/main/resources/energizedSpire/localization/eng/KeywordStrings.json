@@ -4,7 +4,7 @@
     "NAMES": [
       "depression"
     ],
-    "DESCRIPTION": "In this #yStance, you draw #b1 fewer card each turn."
+    "DESCRIPTION": "In this #yStance, you deal #b25% less damage and you take #b50% more damage."
   },
   "energizedSpire:BurningRoomsKeyword": {
     "PROPER_NAME": "Burning\u00a0Rooms",

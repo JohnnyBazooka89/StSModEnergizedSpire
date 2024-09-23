@@ -6,5 +6,5 @@ public enum EnergizedDieEffect {
     ECTOPLASM,
     RUNIC_DOME,
     PHILOSOPHERS_STONE,
-    VELVET_CHOKER
+    BUSTED_CROWN
 }

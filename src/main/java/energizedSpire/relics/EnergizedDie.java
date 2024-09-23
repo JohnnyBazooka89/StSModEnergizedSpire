@@ -4,16 +4,12 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.BeforeRenderIntentRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.relics.VelvetChoker;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -28,16 +24,14 @@ public class EnergizedDie extends CustomRelic implements BeforeRenderIntentRelic
     public static final String IMG_ID_ECTOPLASM = "EnergizedDieEctoplasm";
     public static final String IMG_ID_RUNIC_DOME = "EnergizedDieRunicDome";
     public static final String IMG_ID_PHILOSOPHERS_STONE = "EnergizedDiePhilosophersStone";
-    public static final String IMG_ID_VELVET_CHOKER = "EnergizedDieVelvetChoker";
+    public static final String IMG_ID_BUSTED_CROWN = "EnergizedDieBustedCrown";
     public static final Texture IMG_CURSED_KEY = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_CURSED_KEY));
     public static final Texture IMG_SOZU = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_SOZU));
     public static final Texture IMG_ECTOPLASM = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_ECTOPLASM));
     public static final Texture IMG_RUNIC_DOME = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_RUNIC_DOME));
     public static final Texture IMG_PHILOSOPHER_STONE = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_PHILOSOPHERS_STONE));
-    public static final Texture IMG_VELVET_CHOKER = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_VELVET_CHOKER));
+    public static final Texture IMG_BUSTED_CROWN = ImageMaster.loadImage(EnergizedSpireMod.getRelicImagePath(IMG_ID_BUSTED_CROWN));
     public static final Texture OUTLINE = ImageMaster.loadImage(EnergizedSpireMod.getRelicOutlineImagePath(ID));
-
-    private static final RelicStrings velvetChokerStrings = CardCrawlGame.languagePack.getRelicStrings(VelvetChoker.ID);
 
     private EnergizedDieEffect currentEffect;
     private boolean obtained;
@@ -92,45 +86,14 @@ public class EnergizedDie extends CustomRelic implements BeforeRenderIntentRelic
             }
             AbstractDungeon.onModifyPower();
         }
-        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER)) {
-            this.counter = 0;
-        }
     }
 
     @Override
-    public void atTurnStart() {
-        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER)) {
-            this.counter = 0;
+    public int changeNumberOfCardsInReward(int numberOfCards) {
+        if (isCurrentEffectEqualTo(EnergizedDieEffect.BUSTED_CROWN)) {
+            return numberOfCards - 2;
         }
-    }
-
-    @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER) && this.counter < 6) {
-            this.counter++;
-            if (this.counter >= 6) {
-                flash();
-            }
-        }
-    }
-
-    @Override
-    public boolean canPlay(AbstractCard card) {
-        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER)) {
-            if (this.counter >= 6) {
-                card.cantUseMessage = (velvetChokerStrings.DESCRIPTIONS[3] + 6 + velvetChokerStrings.DESCRIPTIONS[1]);
-                return false;
-            }
-            return true;
-        }
-        return super.canPlay(card);
-    }
-
-    @Override
-    public void onVictory() {
-        if (isCurrentEffectEqualTo(EnergizedDieEffect.VELVET_CHOKER)) {
-            this.counter = -1;
-        }
+        return numberOfCards;
     }
 
     @Override
@@ -156,7 +119,7 @@ public class EnergizedDie extends CustomRelic implements BeforeRenderIntentRelic
                 currentEffect = EnergizedDieEffect.PHILOSOPHERS_STONE;
                 break;
             case 6:
-                currentEffect = EnergizedDieEffect.VELVET_CHOKER;
+                currentEffect = EnergizedDieEffect.BUSTED_CROWN;
                 break;
         }
         setImageBasedOnCurrentEffect();
@@ -180,8 +143,8 @@ public class EnergizedDie extends CustomRelic implements BeforeRenderIntentRelic
             case PHILOSOPHERS_STONE:
                 setTextureOutline(IMG_PHILOSOPHER_STONE, OUTLINE);
                 break;
-            case VELVET_CHOKER:
-                setTextureOutline(IMG_VELVET_CHOKER, OUTLINE);
+            case BUSTED_CROWN:
+                setTextureOutline(IMG_BUSTED_CROWN, OUTLINE);
                 break;
         }
     }
@@ -207,7 +170,7 @@ public class EnergizedDie extends CustomRelic implements BeforeRenderIntentRelic
                 case PHILOSOPHERS_STONE:
                     this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[6]));
                     break;
-                case VELVET_CHOKER:
+                case BUSTED_CROWN:
                     this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[7]));
                     break;
             }

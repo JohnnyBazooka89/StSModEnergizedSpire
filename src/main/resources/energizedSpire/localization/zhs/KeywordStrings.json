@@ -4,7 +4,7 @@
     "NAMES": [
       "抑郁"
     ],
-    "DESCRIPTION": "在这一 #y姿态 中，你每回合少抽 #b1 张牌。"
+    "DESCRIPTION": "在这一 #y姿态 中，你造成 #b25% 较少的伤害，并承受 #b50% 更多的伤害。"
   },
   "energizedSpire:BurningRoomsKeyword": {
     "PROPER_NAME": "燃烧房",
