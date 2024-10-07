@@ -133,7 +133,7 @@
     "NAME": "乌云",
     "FLAVOR": "阳光总在乌云上。",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 [E] 。 每当你以平静姿态结束回合时，下回合失去 [E] 。"
+      "在每回合开始时获得 [E] 。 每当你以 #y平静 #y姿态 结束回合时，下回合失去 [E] 。"
     ]
   },
   "energizedSpire:CrystalSphere": {
