@@ -5,5 +5,12 @@
       "在你的下个回合开始时，重新获得 #b",
       " 点 #y集中 。"
     ]
+  },
+  "energizedSpire:LoseEnergyNextTurnPower": {
+    "NAME": "下回合失去能量",
+    "DESCRIPTIONS": [
+      "在你的下个回合开始时，失去 #b",
+      " [E] 。"
+    ]
   }
 }

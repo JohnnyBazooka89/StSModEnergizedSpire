@@ -133,7 +133,7 @@
     "NAME": "Black Cloud",
     "FLAVOR": "There is always sunshine above the black clouds.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Whenever you start your turn without being in any Stance, enter #yenergizedspire:Depression."
+      "Gain [E] at the start of your turn. Whenever you end your turn in Calm Stance, lose [E] next turn."
     ]
   },
   "energizedSpire:CrystalSphere": {

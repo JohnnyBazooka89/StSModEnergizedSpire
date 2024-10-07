@@ -40,7 +40,6 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
     private static final String CARD_STRINGS_PATH = "energizedSpire/localization/%s/CardStrings.json";
     private static final String KEYWORD_STRINGS_PATH = "energizedSpire/localization/%s/KeywordStrings.json";
     private static final String POWER_STRINGS_PATH = "energizedSpire/localization/%s/PowerStrings.json";
-    private static final String STANCE_STRINGS_PATH = "energizedSpire/localization/%s/StanceStrings.json";
 
     //Languages
     private static final String DEFAULT_LANGUAGE_FOLDER = "eng";
@@ -151,8 +150,6 @@ public class EnergizedSpireMod implements PostInitializeSubscriber, EditRelicsSu
         BaseMod.loadCustomStringsFile(KeywordStrings.class, String.format(KEYWORD_STRINGS_PATH, languageFolder));
         //Power Strings
         BaseMod.loadCustomStringsFile(PowerStrings.class, String.format(POWER_STRINGS_PATH, languageFolder));
-        //Stance Strings
-        BaseMod.loadCustomStringsFile(StanceStrings.class, String.format(STANCE_STRINGS_PATH, languageFolder));
     }
 
     @Override

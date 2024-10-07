@@ -133,7 +133,7 @@
     "NAME": "乌云",
     "FLAVOR": "阳光总在乌云上。",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 [E] 。每当你在没有处于任何 #y姿态 的情况下开始回合时，进入 #yenergizedspire:抑郁 。"
+      "在每回合开始时获得 [E] 。 每当你以平静姿态结束回合时，下回合失去 [E] 。"
     ]
   },
   "energizedSpire:CrystalSphere": {
