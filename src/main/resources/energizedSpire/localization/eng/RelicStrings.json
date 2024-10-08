@@ -117,8 +117,8 @@
     "NAME": "Pogo Stick",
     "FLAVOR": "Boing, boing, boing...",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Whenever you end a turn without discarding a card, draw #b",
-      " fewer card next turn."
+      "Gain [E] at the start of your turn. Whenever you end a turn without discarding a card, take #b",
+      " damage."
     ]
   },
   "energizedSpire:UnstableMolecules": {
