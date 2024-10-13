@@ -2,6 +2,7 @@ package energizedSpire.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.BaseModCardTags;
+import basemod.helpers.CardPowerTip;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -98,9 +99,11 @@ public class HugeHouse extends CustomRelic {
     }
 
     private AbstractCard getClassSpecificStrike() {
-        for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.color == AbstractDungeon.player.getCardColor() && (card.hasTag(BaseModCardTags.BASIC_STRIKE) || card.hasTag(AbstractCard.CardTags.STARTER_STRIKE))) {
-                return card.makeCopy();
+        if (AbstractDungeon.player != null) {
+            for (AbstractCard card : CardLibrary.getAllCards()) {
+                if (card.color == AbstractDungeon.player.getCardColor() && (card.hasTag(BaseModCardTags.BASIC_STRIKE) || card.hasTag(AbstractCard.CardTags.STARTER_STRIKE))) {
+                    return card.makeCopy();
+                }
             }
         }
         return new Strike_Red();
@@ -121,5 +124,6 @@ public class HugeHouse extends CustomRelic {
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
         this.tips.removeIf(tip -> tip.header.equalsIgnoreCase("strike") || tip.header.equalsIgnoreCase("打击"));
+        this.tips.add(new CardPowerTip(getClassSpecificStrike()));
     }
 }
