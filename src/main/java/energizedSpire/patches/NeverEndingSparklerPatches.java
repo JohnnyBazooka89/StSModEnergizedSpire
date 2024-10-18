@@ -113,11 +113,11 @@ public class NeverEndingSparklerPatches {
         public static void Prefix(AbstractRoom abstractRoom) {
             if (hasEmeraldKeySpireField(AbstractDungeon.getCurrMapNode())) {
 
-                AbstractRelic ogreHeadRelic = AbstractDungeon.player.getRelic(NeverEndingSparkler.ID);
+                AbstractRelic neverEndingSparklerRelic = AbstractDungeon.player.getRelic(NeverEndingSparkler.ID);
 
-                if (ogreHeadRelic != null) {
-                    ogreHeadRelic.flash();
-                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, ogreHeadRelic));
+                if (neverEndingSparklerRelic != null) {
+                    neverEndingSparklerRelic.flash();
+                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, neverEndingSparklerRelic));
                 }
 
                 switch (AbstractDungeon.mapRng.random(0, 3)) {
