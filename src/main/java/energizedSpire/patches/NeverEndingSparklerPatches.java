@@ -30,7 +30,7 @@ import static energizedSpire.patches.NeverEndingSparklerPatches.HasEmeraldKeyPat
 
 public class NeverEndingSparklerPatches {
 
-    private static final List<String> ALLOWED_ROOM_CLASSES = Arrays.asList(
+    private static final List<String> ALLOWED_ROOM_CLASS_NAMES = Arrays.asList(
             "com.megacrit.cardcrawl.rooms.MonsterRoom",
             "com.megacrit.cardcrawl.rooms.MonsterRoomElite"
     );
@@ -39,7 +39,7 @@ public class NeverEndingSparklerPatches {
 
         public static Boolean assignIfNullAndGetValue(MapRoomNode mapRoomNode) {
             if (hasEmeraldKeySpireField.get(mapRoomNode) == null) {
-                if (ALLOWED_ROOM_CLASSES.contains(mapRoomNode.getRoom().getClass().getName())) {
+                if (ALLOWED_ROOM_CLASS_NAMES.contains(mapRoomNode.getRoom().getClass().getName())) {
                     hasEmeraldKeySpireField.set(mapRoomNode, NeverEndingSparklerRngPatches.rng.randomBoolean());
                 } else {
                     hasEmeraldKeySpireField.set(mapRoomNode, false);
