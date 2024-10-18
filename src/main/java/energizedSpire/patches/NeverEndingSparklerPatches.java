@@ -3,6 +3,7 @@ package energizedSpire.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
@@ -21,15 +23,23 @@ import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static energizedSpire.patches.NeverEndingSparklerPatches.HasEmeraldKeyPatch.hasEmeraldKeySpireField;
 
 public class NeverEndingSparklerPatches {
+
+    private static final List<String> ALLOWED_ROOM_CLASSES = Arrays.asList(
+            "com.megacrit.cardcrawl.rooms.MonsterRoom",
+            "com.megacrit.cardcrawl.rooms.MonsterRoomElite"
+    );
 
     public static class HasEmeraldKeySpireFieldChecker {
 
         public static Boolean assignIfNullAndGetValue(MapRoomNode mapRoomNode) {
             if (hasEmeraldKeySpireField.get(mapRoomNode) == null) {
-                if (mapRoomNode.getRoom() instanceof MonsterRoom || mapRoomNode.getRoom() instanceof MonsterRoomElite) {
+                if (ALLOWED_ROOM_CLASSES.contains(mapRoomNode.getRoom().getClass().getName())) {
                     hasEmeraldKeySpireField.set(mapRoomNode, NeverEndingSparklerRngPatches.rng.randomBoolean());
                 } else {
                     hasEmeraldKeySpireField.set(mapRoomNode, false);
@@ -102,6 +112,14 @@ public class NeverEndingSparklerPatches {
     public static class AbstractRoomPatch {
         public static void Prefix(AbstractRoom abstractRoom) {
             if (hasEmeraldKeySpireField(AbstractDungeon.getCurrMapNode())) {
+
+                AbstractRelic ogreHeadRelic = AbstractDungeon.player.getRelic(NeverEndingSparkler.ID);
+
+                if (ogreHeadRelic != null) {
+                    ogreHeadRelic.flash();
+                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, ogreHeadRelic));
+                }
+
                 switch (AbstractDungeon.mapRng.random(0, 3)) {
                     case 0: {
                         for (final AbstractMonster m : abstractRoom.monsters.monsters) {
